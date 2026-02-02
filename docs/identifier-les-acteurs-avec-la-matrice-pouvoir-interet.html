@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Identifier les parties prenantes avec la matrice pouvoir et intérêt - UX Design by zabellemotte</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/theme/css/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UX Design by zabellemotte</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="identifier-les-parties-prenantes-avec-la-matrice-pouvoir-et-intérêt"><a class="header" href="#identifier-les-parties-prenantes-avec-la-matrice-pouvoir-et-intérêt">Identifier les parties prenantes avec la matrice pouvoir et intérêt</a></h1>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/matrice-pouvoir-interet-base-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>1. Planification</dd>
+            <dt>Catégorie</dt>
+            <dd>Gestion de projet</dd>
+            <dt>Intérêt</dt>
+            <dd>Identifier les acteurs du projet et définir comment les impliquer</dd>
+            <dt>Complexité</dt>
+            <dd>Facile</dd>
+            <dt>Durée</dt>
+            <dd>Quelques heures</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=djlvUAA8O3I" target="_blank">Tuto Matrice Pouvoir Intérêt (LP Animateur Qualité)
+ </a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="#resume"> En résumé </a></li>
+<li> <a href="#comment">Comment l'appliquer ?</a> </li>
+<li> <a href="#exemple">Exemple concret</a> </li>
+<li> <a href="#variantes">Variantes</a> </li>
+<li> <a href="#limites">Limites</a> </li>
+<li> <a href="#histoire">La petite histoire</a> </li>
+</ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé</a></h4>
+<p>La matrice pouvoir et intérêt présente les acteurs impliqués selon leur pouvoir et leur intérêt par rapport au projet. Elle est plutôt conçue pour l'équipe pilote du projet et détermine plutôt la manière d'impliquer les différents acteurs. 
+</p>
+<p> Le pouvoir est la capacité à influencer les actions dans l'organisation (lié aux ressources ou compétences mobilisables). Alors que l'intérêt est le degré d'implication émotionnelle ou pratique dans les activités de l'organisation. </p>
+<p> La matrice se compose de 4 quadrants selon le niveau de pouvoir (faible ou élevé) et le niveau d'intérêt (faible ou élevé):</p>
+<ul>
+<li> Intérêt élevé / Pouvoir élevé : Acteurs clés à mobiliser régulièrement par rapport à l'orientation du projet (à impliquer dans un comité de pilotage par exemple)</li>
+<li> Intérêt élevé / Pouvoir faible : Acteurs à garder informés et à sensibiliser aux raisons du changement (à impliquer dans un comité d'utilisateurs testeurs par exemple) </li>
+<li> Intérêt faible / Pouvoir élevé : Acteurs à garder satisfaits (à impliquer dans des tests utilisateurs occasionnels par exemple)</li>
+<li> Intérêt faible / Pouvoir faible : Acteurs à informer occasionnellement</li>
+</ul>
+<h4 id="comment"><a class="header" href="#comment"> Comment l'appliquer ? </a></h4>
+Les étapes pour composer la matrice pouvoir et intérêt sont les suivantes :
+<ol>
+<li> Identifier tous les acteurs :
+<ul> 
+<li> ceux qui seront affectés par le projet de près ou de loin </li>
+<li> ceux qui peuvent influencer le projet positivement ou négativement</li>
+<li> ceux qui peuvent mobiliser des ressources pour le projet. </li>
+</ul>
+<li> Composer la matrice et identifier le niveau de pouvoir et d'intérêt de chaque acteur</li>
+<li> Vérifier que chaque position correspond la position réelle de chaque acteur et non à la position désirée de chaque acteur </li>
+<li> Prenez en compte le fait que les acteurs qui engagent des ressources dans le projet auront un fort pouvoir et/ou intérêt pour le projet.</li>
+<li> Valider la matrice avec l'équipe projet</li>
+</ol>
+<h4 id="exemple"><a class="header" href="#exemple"> Exemple concret </a></h4>
+<p>Dans une entreprise de vente de pneus, une refonte du site web est envisagée pour optimiser les ventes. Le nouveau site sera mis en place par une agence externe qui sera un des acteurs du projet, au même titre que l'équipe informatique.</p>
+<p>La matrice pouvoir et intérêt permet d'identifier les acteurs à impliquer dans ce projet:</p>
+<img src="images/matrice-pouvoir-interet-exemple-cc-by-sa.png" style="max-width:100%; cursor:pointer;" class="photo-style2" width="1600px" onclick="this.requestFullscreen()"/>
+<ul>
+<li> pouvoir élevé et intérêt élevé : la direction marketing et e-commerce est le premier service concerné par ce projet, qui devra aussi prendre en compte les retours des garages partenaires et du service client</li>
+<li> pouvoir élevé et intérêt faible : la direction générale doit mobiliser le budget pour le projet et la réalisatoin sera portée conjointement par l'agence web et le service informatique interne; la satisfaction de ces acteurs est essentielle pour la réussite du projet</li>
+<li> pouvoir faible et intérêt élevé : les clients et le service dépôt devront être tenus informés des changements et pourront être consultés plus en vala du projet</li>
+<li> pouvoir faible et intérêt fiable : les visiteurs occasionnels du site seront seulement informés des évolutions.</li>
+</ul>
+Cette analyse ne détermine pas encore précisément comment coordonner le projet mais permet de lister les acteurs et de définir leur degré d'implication dans le projet de manière générale.
+<h4 id="variantes"><a class="header" href="#variantes"> Variantes </a></h4>
+Il existe de nombreuses variantes de matrices pour cartographier les parties prenantes :
+<ul>
+<li> La <a href="https://www.pmi.org/learning/library/change-intelligent-stakeholder-engagement-9892" target="_blank">matrice pouvoir, intérêt et attitude de Louise Hillson & Ruth Simon (2007)</a> ajoute une dimension liée à l'attitude (partisan ou résistant) au modèle et dégage 8 profils comme l'ami, le saboteur ou le détonateur.</li>
+<li> La <a href="https://fastercapital.com/term/influence-impact-matrix.html" target="_blank">matrice impact et influence de la Banque mondiale (1998)</a> croise le degré d'affectation par le projet (impact) et la capacité à influencer les décisions (influence). Elle permet d'identifier ceux qui subissent le plus les effets du projet même s’ils n’ont pas de pouvoir décisionnel. Elle est conseillée pour les projets participatifs ou à fort impact social, afin d’équilibrer pouvoir d’influence et vulnérabilité des acteurs (développement rural ou urbain, projets environnementaux, réformes administratives, ...).</li>
+<li> La <a href="https://ouci.dntb.gov.ua/en/works/lo1opEp7/" target="_blank">matrice pouvoir, légitimité et urgence de Ronald K. Mitchell, Bradley R. Agle & Donna J. Wood (1997)</a> permet de définir une typologie de 8 profils d'acteurs comme le "definitive stakeholder" qui répond au 3 critères, le "dangereux" qui a le pouvoir et l'urgence et le "demandeur" qui a seulement l'urgence. </li>
+</ul>
+<h4 id="limites"><a class="header" href="#limites"> Limites</a></h4>
+<p>La matrice pouvoir et intérêt offre une première analyse très simple des parties prenantes d'un projet mais elle ne permet pas de mettre en évidence les jeux d'influence et constitue une vision à un instant précis du projet. Si certains acteurs ou certaines positions changent, il est bon de redéfinir la matrice.
+Cette matrice définit un mode d'implication généraliste qu'il est nécessaire d'opérationnaliser ensuite.</p>
+<h4 id="histoire"><a class="header" href="#histoire"> La petite histoire</a></h4>
+<p> La matrice pouvoir et intérêt a été créée par Aubrey L. Mendelow en 1991. Ce chercheur de la Manchester Business School questionnait les acteurs à impliquer dans l'analyse et la communication liées à la plannification stratégique.</p>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="1-planification.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="cartographier-les-acteurs-avec-la-matrice-rasci.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="1-planification.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="cartographier-les-acteurs-avec-la-matrice-rasci.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Générer des idées avec le brainstorming - UX Design by zabellemotte</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/theme/css/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UX Design by zabellemotte</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="générer-des-idées-avec-le-brainstorming"><a class="header" href="#générer-des-idées-avec-le-brainstorming">Générer des idées avec le brainstorming</a></h1>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/reussir-un-atelier-de-brainstorming-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>3. Idéation</dd>
+            <dt>Catégorie</dt>
+            <dd>UX Design et Gestion de projet</dd>
+            <dt>Intérêt</dt>
+            <dd>Produire des idées nouvelles en un temps limité </dd>
+            <dt>Complexité</dt>
+            <dd>Facile mais exige de soigner l'atterrissage</dd>
+            <dt>Durée</dt>
+            <dd> 1 heure</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=e5Jpi9O_3-0" target="_blank">Générer et filtrer les idées (Futur and co)</a></dd>
+        </dl>
+    </div>
+  </div>
+  <ul>
+<li> <a href="#phases"> Le brainstoring: un processus en 2 phases </a></li>
+<li> <a href="#scenario">Le scénario de base d'un brainstorming</a> </li>
+<li> <a href="#variantes">Une multitude de variantes pour la phase divergente</a> </li>
+<li> <a href="#trier">Les techniques pour trier les idées</a> </li>
+<li> <a href="#histoire">La petite histoire</a> </li>
+</ul>
+<h4 id="phases"><a class="header" href="#phases">Le brainstorming, un processus en 2 phases </a></h4>
+Dans tous les domaines, le brainstorming est pratiqué pour générer des idées, avec plus ou moins de succès.
+Pour réussir l'exercice, il faut intégrer le fait que l'animation d'une séance de brainstorming repose sur deux temps de travail:
+<ul>
+<li> <b>une phase divergente</b> durant laquelle on génère des idées de manière libre et spontannée; cette phase peut être renforcée par des croisement des idées entre les personnes; </li>
+<li> <b>une phase convergente</b> durant laquelle les idées sont triées pour retenir des pistes réalistes.</li>
+</ul>
+Il est essentiel de ne pas négliger le second temps.
+<h4 id="scenario"><a class="header" href="#scenario"> Le scénario de base d'un brainstorminig </a></h4>
+<p>
+Organiser un brainstorming exige tout d'abord une préparation:
+<ul> 
+<li><b>Local et matériel</b>: le local prévu pour la séance doit permettre aux groupes de se discuter autour d'une table et les supports pour déposer
+des idées doivent être prévus (grande feuille, post-its, marqueurs, ... ou ordinateur pour un encodage en ligne); </li>
+<li><b>Cadrage du problème traité</b>: l'ux vise la résolution de problèmes dans un contexte donné, il faut donc veiller à définir le problème et le contexte, voir les critères de sélection désirés;</li>
+<li><b>Critères de sélection des idées</b> (utilisés dans la phase convergente): les critères essentiels pour la sélection des idées doivent être identifiés avant le brainstorming et il est important de partager les critères non négociables ou les critères liés à des valeurs importantes pour éviter trop de divergence; 
+les critères liés à un arbitrage plus fin ne doivent pas être annoncés (le coût par exemple);</li>
+<li><b>Définition des règles</b>: l'exercice repose sur une phase divergente qui doit permettre un travail sans jugement, où les idées s'expriment de manière spontannée; </li>
+<li><b>Répartion en groupes</b>: le nombre idéal de participant à un groupe se situe entre 5 et 12 et l'idéal est de veiller à une bonne hétérogénéité des groupes;</li>
+<li><b>Définition de rôles</b>: l'exercice suppose une production en un temps limité, ce qui mérite souvent d'être soutenu par des rôles dans les groupes comme l'animateur qui veille à répartir le temps de parole équitablement, le secrétaire qui note les idées et le gardien du temps.
+<li><b>Données préalables</b>: selon la question traitée, vous pouvez préparer des ressources pour les participants (analytics, retours d'expériences, articles d'analyse, ...) pour partir d'une vision claire de la situation actuelle. </li>
+</ul>
+</p>
+<p>
+Le programme d'une séance de brainstorming d'une heure est en général structuré comme suit:
+<ul>
+<li><b>Introduction (5 minutes)</b>: répartition en groupes, présentation du problème et explication des règles du brainstorming;</li>
+<li><b>Génération libre d'idées (20 minutes)</b>: cette phase début par une réflexion individuelle puis se poursuit par un échange libre en groupe; </li>
+<li><b>Génération d'idées à l'aide de techniques de transformation (20 minutes)</b>: différentes approches peuvent permettre de croiser les idées ou de les transformer (voir ci-dessous);
+<li><b>Tri et sélection des idées sur base de critères définis (15 minutes)</b>: l'issue du brainstorming doit se terminer pas une sélection d'idées réalistes (voir les approches ci-dessous pour trier). </li>
+</ul>
+</p>
+<p>
+Aujourd'hui, le brainstorming peut être soutenu par des outils électroniques qui permettent la génération d'idées à distance.
+Ces outils intègrent parfois des options de vote qui peuvent permettre de faciliter l'animation même en présence.
+</p>
+<h4 id="variantes"><a class="header" href="#variantes"> Une multitude de variantes pour la phase divergente </a></h4>
+<p>
+La phase divergente du brainstroming peut être soutenue par de nombreuses variantes présentés ci-dessous selon les axes d'action.
+</p>
+<p> Tout d'abord, certaines méthodes sont plus axées sur le fait de <b>redéfinir le problème</b>:
+<ul>
+<li> <a href="https://ideamap.ai/toolbox/question-storming" target="_blank"><b>le question storming</b></a>: l'approche consiste à générer des questions qui permettront de mieux cerner le problème; les solutions peuvent être envisagées ensuite; </li>
+<li> <a href="https://people-shift.com/articles/the-reframing-matrix/" target="_blank"><b>le reframing</b></a>: la méthode propose de partir d'une analyse élargie du problème structurée en 4 quadrants PPPC : People perspective, Process perspective, Platform perspective et Culture perspective, 
+pour aborder le problème sous l'angle humain, sous un l'angle processus, sous l'angle technique et sous l'angle de la culture d'entreprise.</li>
+</ul>
+</p>
+<p>
+Ensuite, certaines méthodes visent à <b>changer la perspective sur le problème</b>:
+<ul>
+<li> <b>le brainstorming inversé</b> : l'approche consiste à envisager les pistes qui reforcent le problème pour ensuite les envisager de manière positive; pour les participants, c'est parfois plus simple d'adopter un point de vue négatif et cela permet d'accéder à un une discussion plus légère et plus propice à la divergence; 
+c'est aussi une approche intéressante quand on est coincé dans un brainstorming où "le problème, c'est pas nous, c'est les autres" car il permet d'envisager des axxes d'actions à la portée des participants;</li>
+<li> <b>la définition d'axes de réflexion</b> : <a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_Walt_Disney" target="_bmank">la méthode Disney</a> propose par exemple d'endosser successivement le rôle du rêveur, du réaliste et du critique; 
+<a href="https://competentia.be/outils/la-methode-des-6-chapeaux?utm_source=chatgpt.com" target="_blank">la méthode des 6 chapeaux (de Edward de Bono)</a> propose d'envisager le problème avec 6 attitude différentes : l'observation (chapeau blanc), la créativité (chapeau vert), l'optimisme (chapeau jaune), le jugement (chapeau noir), les émotions (chapeau rouge) et l'organisation (chapeau bleu);</li>
+<li> <b>la distribution de rôles </b>: l'idée est d'envisager le brainstorming en endossant un rôle précis dans le contexte pour aborder le problème avec un angle de vue défini; cela revient à interagir en devenant un persona du projet; le rôle peut aussi être celui d'un personnage célèbre (Steve Jobs par exemple) ou d'un personnage public (un ministre par exemple);</li>
+<li> <a href="https://geniusrevive.com/en/analogy-technique-as-a-tool-for-creative-problem-solving" target="_blank"><b>l'analogie forcée</b></a> : l'approche consiste à mettre en relation volontairement un problème à résoudre avec un domaine sans lien apparent, puis à explorer ce que cette comparaison fait émerger; par exemple, pour gérer un problème lié à un workflow de validation,
+ il serait possible d'envisager le flux de gestion d'un recommandé postal; les IA génératives peuvent nous aider à trouver des analogies opportunes pour nos projets.  </li>
+</ul>
+</p>
+<p>
+D'autres approches visent à <b>structurer la divergence</b>:
+<ul>
+<li> <a href="https://www.creativityteaching.eu/scamper/" target="_blank"><b>la méthode SCAMPER</b></a> : cette méthode propose d'envisager de faire évoluer les solutions envisagées au travers de 7 axes de réflexion : Substituer (Substitute), Combiner (Combine), Adapter (Adapt), Modifier (Modify), Donner un autre usage (Put to another use), Éliminer (Eliminate) et Réorganiser (Rearrange);
+<li> <a href="https://fr.wikipedia.org/wiki/TRIZ" target="_blank"> <b>la méthode TRIZ </b></a> : une approche exploitée dans un contexte industriel quand on est confronté à des contraditions (le produit doit être solide et  léger, par exemple) et vise à adopter une approche pluri-disciplinaire pour trouver une solution compromis;</li>
+<li> <a href="https://www.directpoint.ch/fr/processus-de-campagne/recherche-d-idees/des-idees-nouvelles-grace-a-la-matrice-morphologique" target="_blank"> <b>la matrice morphologique</b> </a> : l'idée est d'explorer toutes les combinaisons possibles d’un problème complexe en décomposant le système en ses dimensions ou caractéristiques principales, puis en listant les alternatives possibles pour chaque dimension, et enfin en combinant ces alternatives pour générer des solutions nouvelles.
+</li>
+</ul>
+</p>
+<p> La priorité peut aussi être de <b>limiter les interactions pour proposer une réflexion plus individuelle</b>:
+<ul>
+<li> <a href="https://librecours.net/modules/lownum-methodo/ideation/solweb/co/brainwriting.html" target="_blank"><b>le brainwriting</b></a>:
+l'approche consiste à envisager les échanges sur les idées par écrit pour faciliter l'expression des personnes plus introverties; 
+chaque participant soit ensuite poursuivre sa réflexion sur base d'une idée existante d'un autre participant;
+l'exercice peut se jouer sur un temps plus long, via l'échange de carnets de notes par exemple; </li>
+<li><a href="https://www.usabilitybok.org/braindrawing" target="_blank"><b> le braindrawing</b></a>: les idées sont générées par le dessin;</li>
+<li> <b>le silent brainstorming</b>: les participants génèrent des idées individuellement et en silence, généralement par écrit, avant toute discussion collective; 
+cette approche vise à réduire les biais sociaux, favoriser la participation équitable et améliorer la qualité et la diversité des idées produites.</li>
+</ul>
+</p>
+<h4 id="trier"><a class="header" href="#trier"> Les techniques pour trier les idées  </a></h4>
+<p>
+La phase convergente exige de faire émerger les idées réalistes. Il faut pour cela <b>trier les idées selon certains critères</b>
+qui peuvent être:
+<ul>
+<li><b>la faisabilité</b></li>
+<li><b>la valeur ajoutée</b> </li>
+<li>l'efficacité</li>
+<li>le coût</li>
+<li>le temps pour l'implémentation</li>
+<li>le caractère innovant</li>
+<li>les risques induits</li>
+<li>...</li>
+</ul>
+Les critères à privilégier doivent être définis à l'avance et il est important de <b>présenter les critères non négociables 
+et les critères de valeur dès le départ</b> pour orienter le brainstorming vers des solutions réalistes.</p>
+<p> 
+Au delà du <b>vote pour les idées préférées</b>, il est possible de <b>trier les idées dans une matrice 2x2 structurée sur base des 2 critères</b> de sélection essentiels.
+Les critères utilisés couramment sont la faisabilité et la valeur ajoutée. L'idée sera alors de retenir les idées qui correspondent à une haute faisabilite et à une grande valeur ajoutée.
+</p>
+ <img src="images/trier-les-idees-brainstorming-cc-by-sa.png" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+<p> Les tri multi-critères sont aussi possibles mais moins évidents à mener. <b>Le plus sage est sans doute de faire émerger les idées retenues sur base de 2 critères essentiels puis d'opérer une sélection dans les idées restantes sur base d'une discussion argumentée.</b></p>
+<h4 id="limites"><a class="header" href="#limites">Les limites du brainstorming</a></h4>
+La méthode a montré ses limites dans les situations suivantes :
+<ul>
+<li> il est difficile de résoudre des problèmes qui exigent une expertise technique via un brainstorming;
+<li> des facteurs sociaux peuvent entraver le bon déroulement du brainstorming : différence de statut, conflit entre personnes, ...</li>
+<li> les contributions individuelles ne sont pas visibilisées et cela peut fruster et/ou diminuer l'engagement de certains participants.</li>
+</ul>
+mais la diversité des méthodes de brainstorming permet de trouver des approches pour contouner ces biais.
+<h4 id="trier"><a class="header" href="#trier"> La petite histoire  </a></h4>
+<p>
+Le brainstorming est formalisé dans les années 1940 par Alex F. Osborn, publicitaire américain et cofondateur de l’agence BBDO. 
+Dans un contexte de production publicitaire intensive, Osborn constate que les réunions classiques brident la génération d’idées 
+par l’autocensure et la peur du jugement. Il propose alors une méthode collective visant à produire un grand nombre d’idées
+ en suspendant temporairement l’évaluation critique, méthode qu’il popularise dans Applied Imagination (1953).</p>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="3-ideation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="4-generation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="3-ideation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="4-generation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>UX Design by zabellemotte - UX Design by zabellemotte</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/theme/css/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UX Design by zabellemotte</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ux-design-by-zabellemotte"><a class="header" href="#ux-design-by-zabellemotte">UX Design by zabellemotte</a></h1>
+<h4 id="definition"><a class="header" href="#definition"> C'est quoi le UX Design ? </a></h4>
+<p>Votre mission est <b>concevoir un nouveau produit/service ou de faire évoluer un produit/service existant</b>&nbsp;?</p>
+<p>Découvrez comment atteindre cet objectif en veillant à <b>impliquer les utilisateurs</b> tout au long du processus de conception avec le User eXperience Design !</p>
+<img src="images/ux-design-by-zabellemotte-cc-by-sa.png" alt="UX Design by Zabelle Motte" width="1600" style="max-width:100%; cursor:pointer; margin-right: 20px;" class="photo-style2" onclick="this.requestFullscreen()">
+<p>L'approche est structurée en <b>5 étapes</b> qui inspirent la structure de ce site :</p>
+<ol>
+<li>Planification : Définition de la mission</li>
+<li>Exploration : Compréhension des utilisateurs et analyse du contexte </li>
+<li>Idéation : Conception de solutions </li>
+<li>Génération : Production de prototypes ou évolutions </li>
+<li>Evaluation : Test des prototypes ou évolutions </li>
+</ol>
+<p>Les trois dernières étapes sont à envisager de manière itérative pour conduire la finalisation du produit et ses évolutions.</p>
+<p>Ne perdez plus jamais la main sur vos projets, gravitez sur la même orbite que vos utilisateurs !
+<h4 id="pourquoi"><a class="header" href="#pourquoi"> Pourquoi impliquer les utilisateurs ? </a></h4>
+Les raisons qui justifient d'impliquer les utilisateurs dès la gestation d'un projet sont nombreuses :
+<ul>
+<li>moins de risque de dépassement du budget ou du temps de développement</li>
+<li>besoins mieux cernés, donc maintenance évolutive allégée</li>
+<li>meilleure expérience d'utilisation, adoption facilitée, productivité augmentée, temps de formation minimisé</li>
+<li>erreurs et incidents de supports moins fréquents</li>
+</ul>
+<p><b>En bref, impliquer les utilisateurs dès la gestation d'un projet permet d'optimiser la gestion des ressources et de l'expérience.</b></p>
+<i>Adapter un outil en production coûte 10 fois plus de temps que de l'adapter pendant la phase de design.</i> <br/>
+Tom Gilb, ingénieur système spécialiste des méthodes qualité
+<p> Quelques références sérieuses sur le retour sur investissement du UX design:
+<ul> 
+<li> Bias, R. G., & Mayhew, D. J. (2005). Cost-Justifying Usability: An Update for the Internet Age. Morgan Kaufmann. </li>
+<li> Maguire, M. (2001). Methods to support human-centred design, International Journal of Human-Computer Studies, Volume 55, Issue 4, Pages 587-634, ISSN 1071-5819, <a href="https://doi.org/10.1006/ijhc.2001.0503" target="_blank">
+https://doi.org/10.1006/ijhc.2001.0503 </a></li>
+<li> International Organization for Standardization. (2019). Ergonomics of human-system interaction — Part 210: Human-centred design for interactive systems (ISO 9241-210:2019). ISO. 
+<a href="https://www.iso.org/standard/77520.html" target="_blank">https://www.iso.org/standard/77520.html </a></li>
+<li> Sheppard, B., Sarrazin, H., Kouyoumjian, G., & Dore, F. (2018). The business value of design. McKinsey & Company <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-business-value-of-design" target="_blank"> https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-business-value-of-design</a> </li>
+</p>
+<h4 id="qui"><a class="header" href="#qui">Qui suis-je ?</a></h4>
+<div style="display: flex; align-items: center;">
+  <img src="images/zabellemotte.png" alt="Zabelle Motte" width="100" style="margin-right: 20px;" class="photo-style">
+  <p>
+Je m'appelle Isabelle Motte et je gère des projets informatiques depuis plus de 20 ans. Ce site vise à partager mes pratiques en matière de <b>gestion des enjeux utilisateurs</b>.
+Il référence les méthodes qui me semblent intéressantes et simples à mettre en oeuvre. Je mixe des références issues des <b>théories de gestion de projet et du UX Design</b>.
+Mes pratiques en UX Design ont été renforcées par ma participation en 2026 au <a href="https://husci.be/formation/certificat-inter-universites-en-user-experience-design-and-research-ux/"> Certificat inter universités en User Experience Design and Research (UX) cordonné par l'Université Libre de Bruxelles </a>. 
+  </p>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
