@@ -3,7 +3,7 @@
 - [Introduction](./introduction.md)
     - [Découvir les concepts liés à l'UX](./decouvrir-les-concepts-ux.md)
     - [Découvrir les modèles pour analyser l'UX](./decouvrir-les-modeles-ux.md)
-    - [Cerner les concepts de design et d'innovaion](./cerner-design-et-innovation.md)
+    - [Cerner les concepts de design et d'innovation](./cerner-design-et-innovation.md)
 - [1. Planification](./1-planification.md)
     - [Identifier les parties prenantes avec la matrice pouvoir et intérêt](./identifier-les-acteurs-avec-la-matrice-pouvoir-interet.md)
     - [Cartographier les parties prenantes avec la matrice RACI ou RASCI](./cartographier-les-acteurs-avec-la-matrice-rasci.md)
