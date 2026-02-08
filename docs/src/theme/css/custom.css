@@ -17,6 +17,9 @@ html, #body-container{
 h1{
 	font-size:120%;
 }
+h6{
+    text-align:center;
+}
 .sidebar .sidebar-resize-handle{
 	background-color:#A3C4BC;
 }
@@ -81,6 +84,15 @@ display:none;
 	color:#5C2E84;
 	background-color:none;
 }
+.sidebar-scrollbox li.chapter-item > a {
+    font-weight: bold;
+    font-size: 1.05em;
+}
+.section li.chapter-item a {
+    font-weight: normal;
+    font-size: 1em;
+}
+
 .mobile-nav-chapters{
 	width:28px;
 	font-size:1.5em;
