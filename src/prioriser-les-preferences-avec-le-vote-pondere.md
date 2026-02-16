@@ -1,11 +1,9 @@
 # Prioriser les préférences avec le vote pondéré
 
-<p style="background-color:yellow"><b>EN CONSTRUCTION</b></p>
-
 <h4 id="survol">En un coup d'oeil </h4>
 <div class="zabcontainer">
     <div class="zableft">
-      <img src="images/moscow-base-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
     </div>
     <div class="zabright">
         <dl class="zab-method-dl">

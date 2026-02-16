@@ -9,7 +9,6 @@
 </ul>
 
 <h4 id="poles"> 5 pôles pour envisager les enjeux éthiques</h4>
-<p> Selon la définition de l'UNESCO, l'éthique 
 
 <p> Les enjeux éthiques sont présentés au travers de 5 pôles critiques:
 <ul>
