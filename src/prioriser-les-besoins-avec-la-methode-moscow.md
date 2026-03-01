@@ -9,7 +9,7 @@
     <div class="zabright">
         <dl class="zab-method-dl">
             <dt>Etape UX</dt>
-            <dd>1. Planification</dd>
+            <dd>3. Idéation</dd>
             <dt>Catégorie</dt>
             <dd>Gestion de projet</dd>
             <dt>Intérêt</dt>

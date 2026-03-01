@@ -4,22 +4,22 @@
 <h4 id="survol">En un coup d'oeil </h4>
 <div class="zabcontainer">
     <div class="zableft">
-      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+      <img src="images/modele-observation-base-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
     </div>
     <div class="zabright">
         <dl class="zab-method-dl">
             <dt>Etape UX</dt>
             <dd>2. Exploration</dd>
             <dt>Catégorie</dt>
-            <dd>Antropologie</dd>
+            <dd>Anthropologie</dd>
             <dt>Intérêt</dt>
             <dd>Prendre une premier contact avec les acteurs et le terrain sans aucun présupposé</dd>
             <dt>Complexité</dt>
-            <dd>Facile</dd>
+            <dd>Moyenne</dd>
             <dt>Durée</dt>
-            <dd>Au choix</dd>
+            <dd>Au choix selon l'usage</dd>
             <dt>En vidéo</dt>
-            <dd><a href="https://www.youtube.com/watch?v=914dkGItq1Y" target="_blank">Prochainement</a></dd>
+            <dd><a href="https://www.youtube.com/watch?v=CZkqeU_L-jw" target="_blank">Observational Focus. Qualitative methods (Research Methods and Statistics)</a></dd>
         </dl>
     </div>
   </div>
@@ -66,11 +66,29 @@ Pour soutenir l'analyse d'une séquence d'observation, j'ai réalisé un modèle
 <li> la seconde page présente une grille de prise de notes des actions dans une logique chronologique, en y associant les événements et ressentis; 
 cette page est destinée à être imprimée en plusieurs exemplaires pour soutenir tout le temps d'observation.</li>
 </ul>
+<p>
+<a href="images/modele-observation-base-cc-by-sa.pdf"> Télécharger la grille au format pdf</a>
+</p>
+<p>
+<a href="images/modele-observation-base-cc-by-sa.pptx"> Télécharger la grille au format pptx</a>
+</p>
+<p>
 L'idée est de décomposer la séquence en plusieurs activités, elles-mêmes structurées en plusieurs actions. 
 Cette structure peut être obtenue (à postériori) en traçant des lignes dans le tableau pour séparer les activités différentes.
 Les indications temporelles me semblent intéressantes pour objectiver la durée des différentes activités.
 Un tel support me semble pratique pour soutenir la prise de notes en observation.
-
+</p>
+<p>
+Quelques astuces pour mener une observation:
+<ul>
+<li> regarder les éléments qui provoquent le comportement;</li>
+<li> identifier les adaptations; </li>
+<li> examiner ce dont les gens se soucient;</li>
+<li> être attentif au langage corporel (parcourir l'article <a href="" target="_blank">Ten emotion heuristics: Guidelines for assessing the user's affective dimension easily and cost-effectively </a> de Eva De Lera et avant l'observation pour se souvenir des attitudes clés);</li>
+<li> reconnaître les routines ou les habitudes;</li>
+<li> s'attendre à l'inconnu. </li>
+</ul>
+</p>
 
 <h4 id="exemple"> Exemple concret </h4>
 

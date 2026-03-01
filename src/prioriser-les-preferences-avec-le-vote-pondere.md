@@ -3,12 +3,12 @@
 <h4 id="survol">En un coup d'oeil </h4>
 <div class="zabcontainer">
     <div class="zableft">
-      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+      <img src="images/vote-pondere-cc-by-sa.gif" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
     </div>
     <div class="zabright">
         <dl class="zab-method-dl">
             <dt>Etape UX</dt>
-            <dd>Exploration</dd>
+            <dd>3.Idéation</dd>
             <dt>Catégorie</dt>
             <dd>Gestion de projet</dd>
             <dt>Intérêt</dt>
@@ -72,7 +72,7 @@ Elle établit aussi une liste de critères pour permettre un choix objectif :
 <li> facilité d'utilisation pour le personnel </li>
 </ul>
  
-<img src="images/moscow-exemple-cc-by-sa.png" style="max-width:100%; cursor:pointer;" width="1600px" class="photo-style2" onclick="this.requestFullscreen()"/>
+<img src="images/prochainement.png" style="max-width:100%; cursor:pointer;" width="1600px" class="photo-style2" onclick="this.requestFullscreen()"/>
 <p>
 Pour opérer le choix final, il n'est pas réaliste d'interroger tous les élèves mais il est proposé que chaque membre de l'équipe éducative ou de l'équipe de nettoyage remette une note pour les 3 critères ci-dessus. Comme les élèves sont plus nombreux, le poids du critère lié à la facilité d'utilisation par les élèves sera triplé.
 Et puisque les enseignants de primaire utilisent deux fois moins souvent les poubelles que le reste du personnel, leur évaluation sera aussi pondérée par un facteur 0.5. </p>
@@ -82,14 +82,17 @@ Cette approche, simple à mettre en place, permet que le choix soit autant que p
 
 <h4 id="variantes"> Variantes </h4>
 <p> 
-Dans les cas où le vote vise à définir des priorités, il est aussi possible de distribuer aux acteurs un nombre de poinst défini (éventuellement lié à leur poids) à répartir à leur guise entre différentes options. 
+Dans les cas où le vote vise à définir des priorités, il est aussi possible de distribuer aux acteurs un nombre de poinst défini 
+(éventuellement lié à leur poids) à répartir à leur guise entre différentes options. 
 </p>
 
-<h4 id=variantes"> Limite </h4>
-<p> Un acteur trop gros, inutile si le choix est évident, intéressant d'ouvrir un débat avant le vote pour entendre tous les arguments et éviter les influences de personne.</p>
+<h4 id=variantes"> Limites </h4>
+<p> La méthode est à éviter si un des acteurs a clairement un poids supérieur aux autres ou si le choix est évident. </p>
 
 <h4 id="histoire"> La petite histoire </h4>
-<p>La méthode MoSCoW a été créée par Dai Clegg au milieu des années 1990. Elle a été développée dans le cadre du projet DSDM (Dynamic Systems Development Method), une méthode agile britannique antérieure à Scrum.
-DSDM est un des premiers cadres de développement agile formalisés (1994), et la méthode MoSCoW y a été intégrée pour aider à hiérarchiser les exigences.</p>
+<p>Les méthodes de vote pondéré s’inscrivent dans plusieurs traditions complémentaires. Elles trouvent leur origine au XVIIIᵉ siècle dans la théorie 
+du choix social avec Jean-Charles de Borda et Nicolas de Condorcet, qui ont formalisé des systèmes de classement et de comparaison des options. 
+Au XXᵉ siècle, l’aide multicritère à la décision structure la pondération des critères, notamment avec l’AHP de Thomas L. Saaty et les travaux 
+de Bernard Roy. Enfin, la pondération des acteurs relève des théories du management participatif, influencées par des auteurs comme Rensis Likert.</p>
 
 <h6> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </h6> 
