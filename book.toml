@@ -6,6 +6,7 @@ title = "UX Design by zabellemotte"
 
 [output.html]
 no-section-label=true
+site-url = "/ux-design/"
 additional-css = ["src/theme/css/custom.css"]
 
 [output.html.fold]
