@@ -9,7 +9,7 @@
             <dt>Etape UX</dt>
             <dd>3. Idéation</dd>
             <dt>Catégorie</dt>
-            <dd>UX Design et Gestion de projet</dd>
+            <dd>Gestion de projet</dd>
             <dt>Intérêt</dt>
             <dd>Produire des idées nouvelles en un temps limité </dd>
             <dt>Complexité</dt>
