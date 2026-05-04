@@ -168,7 +168,187 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="construire-un-prototype-pour-éprouver-la-conception"><a class="header" href="#construire-un-prototype-pour-éprouver-la-conception">Construire un prototype pour éprouver la conception</a></h1>
-<p>parler des modules 4E (proto statiques) et 4F (proto interactif) dans un seul article ?</p>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>4. Génération</dd>
+            <dt>Catégorie</dt>
+            <dd>UX Design</dd>
+            <dt>Intérêt</dt>
+            <dd>Créer une vision partagée et tester le système tôt pour pouvoir l'affiner</dd>
+            <dt>Complexité</dt>
+            <dd>Moyenne</dd>
+            <dt>Durée</dt>
+            <dd>Quelques heures à quelques jours</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=miVcrftnhzM" target="_blank">
+            Prototypes vs Wireframes in UX Projects (NNGroup)</a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="#resume"> En résumé </a></li>
+<li> <a href="#balises"> Balises pour le prototypage </a></li>
+<li> <a href="#zoning"> Réaliser un zoning </a> </li>
+<li> <a href="#maquette1"> Réaliser une maquette statique </a> </li>
+<li> <a href="#maquette2"> Réaliser une maquette interactive </a> </li>
+<li> <a href="#proto0"> Réaliser un prototype réaliste </a> </li>
+<li> <a href="#proto1"> Réaliser un prototype applicatif via un environnement fermé </a> </li>
+<li> <a href="#proto2"> Réaliser un prototype applicatif réel via un environnement ouvert </a> </li>
+<li> <a href="#proto3"> Réaliser un prototype applicatif réel via un environnement cloud </a> </li>
+<li> <a href="#histoire">La petite histoire</a> </li>
+</ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé</a></h4>
+<p>Cette section présente les différents types de prototypes et décrit comment les exploiter dans un projet.
+Les prototypes basse fidélité sont à utiliser au début du projet pout produire une première vue sur le produit, la partager et la faire évoluer facilement.
+Lorsque la vision se stabilise, les prototypes haute fidélité sont alors envisagés pour cadrer les spécifications du produit fini.
+Les outils d'IA permettent aujourd'hui de construire beaucoup plus rapidement des prototypes haute fidélité et
+vont révolutionner les approches pour prototyper. Cet article dresse un bilan des outils populaires en mai 2026 et a été produit à l'aide de ChatGPT.
+</p>
+<h4 id="balises"><a class="header" href="#balises"> Balises pour le prototypage </a></h4>
+<p> Voici les éléments à prendre en compte pour choisir le bon format de prototype:
+<ul>
+<li>moins la vision est claire, moins il faut investir de temps dans le prototypage;</li>
+<li>moins la fidélité est grande, plus il faut associer des explications orales ou textuelles au prototype pour clarifier le fonctionnement (les spécifications);</li>
+<li>plus la fidélité est grande, moins les utilisateurs osent critiquer; lors des tests utilisateurs de prototypes haute fidélité, il faut insister sur le fait
+que les évolutions sont encore possibles.</li>
+</ul>
+</p>
+<p> Le prototypage exige aussi de clarifier le <b>workflow</b> dans l'application en créant un diagramme qui part du point d'entrée
+et qui montre les différents embranchements possibles dans le parcours utilisateur (couvrir les cas d'erreur). Sur base de ce workflow, il est conseillé de dériver
+différents <b>scenarii</b> qui décrivent un parcours utilisateur au sein d'un contexte défini et sur base d'un objectif précis. Ces scénarii seront aussi une base
+intéressante pour tester l'application.  </p>
+<h4 id="zoning"><a class="header" href="#zoning"> Réaliser un zoning </a></h4>
+<p>Le premier niveau de prototypage est le <b>zoning</b>, qui vise à réaliser une <b>schématisation spatiale</b> de l'interface.
+Les zonings sont réalisés sur un tableau blanc, avec des post-its ou du papier et présentent la structure générale et l'ordre des éléments.</p>
+<p>
+Voici un exemple de zoning que j'ai réalisé au format papier pour un projet qui visait la présentation d'un rapport sur les erreurs des étudiants lors de la rédaction de textes en anglais.
+Les acronymes WFO, VOC, GRAM, SYNT, ... définissent les différents types d'erreurs : Word form, Vocabulary, Grammar, Syntax, ...
+</p>
+<img src="images/zoning_cc_by_sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+<h4 id="maquette1"><a class="header" href="#maquette1"> Réaliser une maquette statique </a></h4>
+<p>Le second niveau de prototypage est la <b>maquette statique</b>, qui peut avoir un niveau de fidélité plus ou moins élevé. La maquette rend plus fidèlement la
+<b>hiérarchie visuelle</b> et vise une description <b>exhausive</b> des différents écrans. Elle peut encore avoir un format papier mais le plus souvent, elle est réalisée
+avec une logiciel dédié comme <a href="https://dra.io" target="_blank">draw.io</a> ou <a href="https://miro.com" target="_blank">Miro</a>. 
+</p>
+<p>
+Voici un exemple de maquette réalisée avec draw.io pour le rapport sur les erreurs étudiantes en anglais (même écran que pour l'exemple lié au zoning):
+</p>
+<img src="images/maquette_cc_by_sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+<p> Les maquettes statiques peuvent être rendues faiblement interactives en créant un <b>parcours séquentiel</b> entre les différents écrans. 
+Pour ma part, j'ai l'habitude d'intégrer les images des différents écrans à un <b>diaporama avec des pages au format vertical</b>. 
+Sur chaque écran, je place une flèche qui indique où cliquer pour passer à l'écran suivant et cela permet d'avoir une idée de navigation via un rendu séquentiel.
+L'avantage de l'outil diaporama est qu'il est facilement manipulable pas tout le monde et qu'il est aisé pour les utilisateurs d'associer des commentaires 
+à chaque diapositive et donc à chaque écran.
+</p>
+<h4 id="maquette2"><a class="header" href="#maquette2"> Réaliser une maquette interactive</a></h4>
+<p> Pour réaliser une maquette interactive, les outils les plus utilisés sont <a href="https://www.miro.com" target="_blank">Miro</a> 
+et <a href="https://www.figma.com" target="_blank">Figma</a> qui sont deux services en ligne payant dont la version gratuite a déjà pas
+mal de potentiel. Ils permettent tous les deux de de créer des liens entre écrans et de partager un prototype, mais leur potentiel est un peu différent:
+<ul>
+<li>Miro propose une série de panneaux avec des boutons et éléments d'interface facilement intégrables, alors que Figma fonctionne plutôt avec des documents modèles 
+depuis lesquels on fait du copier-coller;</li>
+<li>Figma permet de définir des composants avec des éléments d'interaction qui peuvent être recopiés sur plusieurs écrans, alors que dans Miro, la copie d'un écran
+ne permet pas de préserver les interactions intégrées; </li>
+<li>Figma intègre un outil d'aide à la conception via IA qui compose un projet Figma éditable qui est assez performant et déjà disponible dans la version gratuite. </li>
+</ul>
+</p>
+<p>
+Mon travail de veille m'a aussi permis d'épingler <a href="https://penpot.app" target="_blank">Penpot</a> qui propose un service équivalent avec une solution Open Source à installé sur son serveur.
+L'outil peut être utilisé sur le serveur Penpot avec une version gratuite qui a pas mal de potentiel.
+</p>
+<p>
+<a href="https://miro.com/share/prototype-7tZg3aGITnTKdxCJ9oNUWYBt" target="_blank"> Voir un exemple de prototype interactif réalisé avec Miro </a>
+</p>
+<h4 id="proto0"><a class="header" href="#proto0"> Réaliser un prototype réaliste </a></h4>
+<p>Mon travail de veille m'a permis d'identifier des outils qui permettent de créer des <b>interfaces web interactives et visuellement réalistes</b> directement 
+exécutées dans un navigateur, allant au-delà de la simple maquette (Figma/Miro) sans atteindre la logique applicative complète 
+et le comportement fonctionnel d’une vraie application générée (Lovable). Les outils identifiés pour réaliser ce type de prototype : 
+<a href="https://www.framer.com/" target="_blank">Framer</a> et 
+<a href="https://webflow.com/" target="_blank">Webflow</a>. 
+Je n'ai pas eu l'occasion de tester ce type d'outil mais j'ai noté que
+<ul>
+<li> ils intègrent tous les deux de l'aide à la conception via IA mais Webflow semble aller plus loin sur ce point;</li>
+<li> Framer fonctionne en mode fermé sans donner de possibilité d'exporter le code, 
+alors que Webflow propose un export du code, mais une fois exporté, il n'est pas possible d'intégrer des modifications manuelles au projet Webflow. </li>
+</ul>
+</p>
+<p>
+<a href="https://www.relume.io/" target="_blank">Relume</a> est un autre outil qui se positionne entre Figma et Webflow/Framer comme un outil de structuration amont. 
+Contrairement à Figma, qui sert à concevoir des interfaces visuelles, ou à Webflow et Framer, qui permettent de créer des interfaces interactives, 
+Relume génère la structure d’un site (sitemap, wireframes, contenus) à partir d’une idée via un prompt adressé à une IA. 
+Il ne produit pas une interface finale, mais une base organisationnelle destinée à être ensuite transformée en design ou en site fonctionnel.
+Relume s’intègre dans un flux de prototypage où ses structures (sitemaps, wireframes, contenus) sont ensuite importées dans Figma pour le design 
+ou dans Webflow et Framer pour la construction d’interfaces interactives et publiables.
+</p>
+<h4 id="proto1"><a class="header" href="#proto1"> Réaliser un prototype applicatif via un environnement fermé</a></h4>
+<p>
+Les outils comme <a href="https://lovable.dev" target="_blank">Lovable</a>, 
+<a href="https://bolt.new" target="_blank">Bolt.new</a>, 
+<a href="https://base44.com/fr" target="_blank">Base44 </a>, et 
+<a href="https://fr.wix.com/studio/ai" target="_blank">Wix Studio AI</a> appartiennent globalement à la même famille : 
+celle des <b>générateurs d’applications fermées où l’IA produit rapidement un prototype fonctionnel sans exposer entièrement la complexité du code</b>. 
+Dans ces outils, l’IA joue le rôle d’un constructeur de produit end-to-end, capable de transformer un prompt en interface, logique et structure applicative, 
+mais dans un <b>environnement contrôlé et difficilement modifiable de l’extérieur</b>. 
+</p>
+<p>
+Je n'ai pas testé ces outils, mais j'ai noté ils ne sont pas tous équivalents dans leur positionnement. 
+Wix Studio AI est plutôt un outil de création de sites et d’applications web “no-code assisté”,
+avec une logique plus orientée production stable que prototypage rapide. À l’inverse, Lovable, Bolt.new et Base44 sont davantage centrés sur la génération rapide 
+d’applications complètes à partir d’une intention, avec une logique très “MVP instantané”. 
+</p>
+<h4 id="proto2"><a class="header" href="#proto2"> Réaliser une prototype applicatif réel via un environnement ouvert</a></h4>
+<p>
+Abordons à présent les outils plus typés pour les informaticien.es et qui permettent 
+de <b>générer du vrai code, qui peut être édité alternativement de manière manuelle ou via des promts IA</b>.
+Les outils de génération et d’assistance au code sont présentés de manière progressive par rapport au niveau de structuration et de contrôle du projet.  
+</p>
+<p>
+D’abord, des outils comme <a href="https://chatgpt.com" target="_blank">ChatGPT</a>, <a href="https://stitch.withgoogle.com/" target="_blank"> Stich</a> ou
+<a href="https://v0.app/" target="_blank">v0</a> 
+permettent de générer rapidement des vues, des composants ou des blocs de code isolés : 
+l’IA y joue principalement un rôle de générateur de fragments de code à partir d’une intention, sans gestion d’une architecture globale 
+ni d’un projet multi-fichiers. 
+</p>
+<p>
+<a href="https://perso.uclouvain.be/isabelle.motte/myform/manager/version9.html" target="_blank">
+Voir un exemple de prototype de la vue manager sur les formations de son équipe réalisé par agencement de code de ChatGPT en 5 demi-journées
+</a>
+ </p>
+<p>
+Ensuite, des outils comme <a href="https://code.claude.com/docs/fr/overview" target="_blank">Claude Code</a> montent d’un niveau en permettant 
+de raisonner et de produire du code sur des projets complets, 
+avec une capacité à gérer plusieurs fichiers et à maintenir une cohérence globale : l’IA agit comme un architecte logiciel assisté, 
+capable de structurer et refactorer un système. C'est un bonheur de l'associer à l'IA de base Claude qui permet de générer des interfaces très 
+réussies et du code clair et commenté. C'est mon coup de coeur personnel pour le prototypage.
+</p>
+<p>
+<a href="https://perso.uclouvain.be/isabelle.motte/myform/evaluation/version1.html" target="_blank">
+Voir un exemple de prototype d'un formulaire d'évaluation de formation réalisé en 15 minutes avec Claude
+</a>
+ </p>
+<p>
+Enfin, des outils comme <a href="https://cursor.com/" target="_blank">Cursor</a> et 
+<a href="https://github.com/copilot" target="_blank">GitHub Copilot</a> s’intègrent directement dans l’environnement de développement 
+et jouent le rôle d’éditeurs intelligents : 
+l’IA devient un assistant contextuel du développeur, qui aide à compléter, suggérer et modifier du code en temps réel au sein d’un projet déjà structuré.
+</p>
+<h4 id="proto3"><a class="header" href="#proto3"> Réaliser un prototype applicatif réel via un environnement cloud </a></h4>
+<p><a href="https://replit.com/" target="_blank">Replit</a> est un <b>environnement de développement cloud qui permet de créer, 
+exécuter et partager des prototypes applicatifs directement dans le navigateur</b>, 
+sans installation locale. Contrairement aux outils de génération fermés ou aux générateurs de composants, Replit fournit un espace complet où le code est 
+réellement exécuté, ce qui en fait un outil de prototypage “vivant” capable de simuler un comportement applicatif réel. 
+L’IA intégrée peut assister la création, la modification et le débogage du code, mais c’est surtout l’environnement d’exécution cloud qui fait sa force : 
+il permet de tester immédiatement une application fonctionnelle avec backend léger, base de données et interface, dans une logique proche d’un véritable produit,
+tout en restant adapté au prototypage rapide. Un autre outil que je n'ai pas eu l'occasion de tester ...</p>
+<h4 id="histoire"><a class="header" href="#histoire"> La petite histoire</a></h4>
+<p>Le prototypage d’application n’a pas une paternité unique, mais résulte de l’évolution conjointe du design, de la psychologie cognitive et du génie logiciel, 
+popularisée notamment par Donald Norman, Herbert Simon et Bill Moggridge.</p>
 
                     </main>
 

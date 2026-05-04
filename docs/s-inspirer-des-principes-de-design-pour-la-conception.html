@@ -168,9 +168,566 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="sinspirer-des-principes-de-design-pour-la-conception"><a class="header" href="#sinspirer-des-principes-de-design-pour-la-conception">S'inspirer des principes de design pour la conception</a></h1>
-<p>compiler les supports de cours des modules 3D (et 4A? et 4D?) avec les chapitres 15,16 et 17 du bouquin<br/>
-exploiter le visuel partagé par un participant <br/>
-lien utilse https://lawsofux.com/fr/</p>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/principes-design-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>4. Génération</dd>
+            <dt>Catégorie</dt>
+            <dd>UX Design</dd>
+            <dt>Intérêt</dt>
+            <dd>Eviter les erreurs de conception</dd>
+            <dt>Complexité</dt>
+            <dd>Facile</dd>
+            <dt>Durée</dt>
+            <dd>Au fil de la conception ...</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=fYs2Mdyasuc" target="_blank">
+            The Laws of UX - 19 Psychological Design Principles (Joseph Torado)</a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="#resume"> En résumé </a></li>
+<li> <a href="#multi"> Envisager l'expérience utilisateur comme multi-modale </a> </li>
+<li> <a href="#font"> Choisir les polices de caractères </a> </li>
+<li> <a href="#color"> Choisir les couleurs </a> </li>
+<li> <a href="#icon"> Choisir les icônes </a> </li>
+<li> <a href="#nav"> Définir la navigation </a> </li>
+<li> <a href="#button"> Designer les boutons d'action </a> </li>
+<li> <a href="#liens"> Soigner le présentation des liens </a> </li>
+<li> <a href="#home"> Designer la page d'accueil </a> </li>
+<li> <a href="#sec"> Designer un écran avec une liste d'éléments </a> </li>
+<li> <a href="#form"> Designer les formulaires </a> </li>
+<li> <a href="#reassurance"> Stimuler la réassurance </a> </li>
+<li> <a href="#ecriture"> Régider du texte pour le web </a> </li>
+<li> <a href="#ref"> Les références qui m'inspirent</a> </li>
+</ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé</a></h4>
+<p>
+En temps UI designer, il est essentiel de s'inspirer des principes de design pour concervoir les interfaces. 
+Mais le concept se décline en de nombreuses variantes, comme le design visuel, le design intuitif, le design émotionnel, le design persuasif,
+le design du texte, le design éthique, ... et il y a presque autant de coloration de ces règles que d'école de design. 
+</p>
+<p>
+Comment proposer une vue synthétique de cet éventail de références ? Je propose de vous partager ma synthèse pratique sur ces questions et mes références.
+Mon idée est de me focaliser sur les étapes de la conception, celles que l'UI designer parcourt en concevant les interfaces et de vous livrer 
+les points d'attention qui me semblent importants. En bref, cet article est un peu le <b>Practical UI principles by Zabelle Motte</b>.  
+C'est un article que je ne manquerai pas de faire évoluer selon ma pratique.
+</p>
+<h4 id="multi"><a class="header" href="#multi"> Envisager l'expérience utilisateur comme multi-modale</a></h4>
+<p>
+Aujourd'hui, le designer doit envisager le fait que <b>l'utilisateur peut utiliser plusieurs devices</b> pour naviguer sur le web et qu'il peut 
+passer d'un device à l'autre selon son envie. L'utilisateur peut par exemple surfer sur un site d'e-commerce sur smartphone et finaliser son achat 
+sur desktop après avoir comparé les prix. Dans ce cas, il espère ne pas perdre son panier d'achat lors du changement de device.
+<p>
+</p>
+Réaliser des analytics relève d'ailleurs d'un véritable exploit technique en Union Européenne puisque
+le tracking des données doit respecter le règlement européen sur la protection des données (RGPD). 
+</p>
+<p> Selon le projet, la conception d'un site multi-modal peut s'orienter vers un site desktop et une application mobile dédiée, 
+un site <b>responsive</b> dont la présentation s'adapte selon la taille de l'écran ou un site <b>adaptive</b> dont le contenu s'adapte selon la taille de l'écran. 
+Dans la mesure où la majorité du trafic web mondial se déroule sur mobile, la tendance actuelle est de penser mobile first et de designer des écrans 
+pour mobile en priorité. La conception pour mobile impose d'autres contraintes importantes à prendre en compte : 
+<ul>
+<li>le site doit être <b>rapide</b> sinon les utilisateurs ne restent pas (moins de 3 secondes de chargement);</li>
+<li>l'affichage des contenus doit être <b>progressif</b>, en affichant d'abord ce qui est plus important; </li>
+<li>le site doit <b>supporter les interruptions</b> car les utilisateurs sont mobiles, peuvent perdre la connexion ou interrompre la navigation fréquemment.</li>
+</ul>
+</p>
+<p> Finalement, le design pour mobile exige de prendre en compte d'<b>autres enjeux d'intégration</b> comme :
+<ul>
+<li>l'interaction tactile;</li>
+<li>l'interaction avec le micro, la caméra, la géolocalisation, le gyroscope, l'accéléromètre, les objets connectés, ...;</li>
+<li>l'accès direct aux appels téléphoniques;</li>
+<li>l'intégration de solutions de paiement mobile;</li>
+<li>l'authentification biométrique;</li>
+<li>le système de notification push spécifique aux applications mobiles.</li>
+</ul>
+</p>
+<h4 id="font"><a class="header" href="#font"> Choisir les propriétés du texte : polices, tailles, ... </a></h4>
+<p>
+Si le projet n'impose par une charte graphique avec un police de caractère définie, il faut privilégier une <b>police sans empattement</b>, 
+c'est à dire une police où les lettres sont composée de lignes d'épaisseur constante, type sans-sérif. Les polices avec empattement sont plutôt 
+conseillées pour une lecture sur papier. L'idéal est de compter sur une ou deux polices pour un site web, avec une éventuelle police dédicacée 
+aux éléments importants (titres, boutons d'action, ...). Le choix d'une police n'est pas anodin et peut être utilisé pour traduire certaines 
+caractéristiques de la marque ou de l'entreprise. 
+Voyez des tutos sur la typographie pour mieux cerner ce point si souhaité, demandez conseil à votre outil d'IA préféré ou faites un choix prudent 
+et privilégiez une police passe-partout comme Open Sans.
+</p>
+<p> Dans l'utilisation du texte pour la conception, ayez en tête les principes suivants pour définir les propriétés du texte :
+<ul>
+<li> les éléments importants comme les titres et boutons d'action doivent être mis en évidence par la <b>taille</b>; </li>
+<li> l'interligne doit être au moins de 1.5 et l'espace entre 2 paragraphes doit être au moins de 2; </li>
+<li> pour mettre du texte en évidence, on utilise le<b> gras</b> avec parcimonie; mais pas l'italique qui est réservé aux citations, 
+ni les mots en majuscules qui sont à proscrire;</li>
+<li> pour garantir une bonne lisibilité, on évite les fonds en image pour le texte et on veille à un bon <b>contraste</b> pour la lecture; le W3C recommande 
+un contrast ratio de 7:1 pour le texte et de 4.5:1 pour les titres, à tester avec l'extension de navigateur WCAG Color Contrast Checker 
+disponible pour Chrome et Firefox.</li>
+</ul>
+<h4 id="color"><a class="header" href="#color"> Choisir les couleurs </a></h4>
+<p>
+Comment choisir un jeu de couleur pour un site s'il n'y a pas de charte graphique imposée ? L'exercice n'est pas évident de prime abord mais voici
+les éléments qui me servent de guide:
+<ul>
+<li>s'inspirer de la <b>psychologie des couleurs</b> en regardant la <a href="https://www.youtube.com/watch?v=Nxpl7judCwY" target="_blank"> 
+video "Le pouvoir des couleurs | Jean-Gabriel Causse | TEDxDunkerque" de la chaîne TEDx Talks </a> puis la 
+<a href="https://www.youtube.com/watch?v=0lmHo0fymIA" target="_blank">vidéo "Toute la Psychologie des couleurs en 8 minutes"
+de la chaîne Développe moi</a>;
+</li>
+<li> comprendre l'intérêt de la <b>roue chromatique</b> pour choisir les couleurs, en regardant la 
+<a href="https://www.youtube.com/watch?v=_2LLXnUdUIc" target="_blank">vidéo "Beginning Graphic Design: Color" de la chaîne LearnFree</a></li>
+<li> jouer avec la roue chromatique interactive du site <a href="https://paletton.com" target="_blank"> palleton.com </a> pour tester les
+nuances de couleur à retenir. </li>
+</ul>
+</p>
+<p> 
+Aucune information ne doit être véhiculée uniquement via les couleurs car les utilisateurs souffrant de <b>daltonisme</b>
+(8% des hommes et 0.5% des femmes en Europe) ont une perception altérée des couleurs. Sur le web, vous trouverez des jeux couleurs accessibles 
+pour les daltoniens mais le plus simple est sans doute de tester votre site avec l'extension de navigateur Let's Get Color Blind pour Chrome ou Firefox
+pour visualiser un rendu pour les differents types de daltonisme.
+</p>
+<h4 id="icon"><a class="header" href="#icon"> Choisir les icônes </a></h4>
+<p>
+Cette section le semble le meilleur moment pour citer la loi de Jakob.
+</p>
+<table class="law">
+<tr><td> Loi de Jakob </td></tr>
+<tr> <td>
+<i>Les utilisateurs passent la plupart de leur temps sur d'autres sites. Cela signifie qu'ils préfèrent que votre site
+fonctionne de la même manière que tous les autres sites qu'ils connaissent déjà. </i></td></tr>
+</table>
+<p>
+Les outils de prototypage actuels intègrent des librairies d'icônes qui vous permettront de facilement trouver des  <b> visuels
+intuitifs et conventionnels</b> pour illustrer les éléments clés de vos interfaces. Par ailleurs, toute icône doit être associée 
+à unlibellé explicite, de préférence affiché directement et pas seulement comme info-bulle.
+</p>
+<p>
+Si vous devez designer une icône spécifique, questionnez un moteur de recherche en mode recherche d'image 
+et/ou un outil d'IA générative. La psychologie des couleurs, évoquée dans un point ci-dessus pourra aussi vous guider. Si vous ne maitrisez pas 
+d'outil de dessin vectoriel, commencez avec <a href="https://inkscape.org/" target="_blank">Inskscape </a>qui est open source et gratuit, 
+et vous pourrez le découvrir avec la 
+<a href="https://www.youtube.com/watch?v=h6eTCkk6wOI" target="_blank"> vidéo "Inkscape Beginner Tutorial | Icon Drawing with Basic Shapes" de
+la chaîne Logs By Nick</a>. Et n'hésitez pas à tester avec vos utilisateurs pour vérifier que le schème mental utilisé leur parle ...
+</p>
+<h4 id="nav"><a class="header" href="#nav"> Définir la navigation </a></h4>
+<p>
+L'article <a href="structurer-l-information-avec-le-tri-de-cartes.html"> Structurer l'information avec le tri de cartes </a> nous invite
+à nous inspirer des modèles mentaux des utilisateurs pour structurer l'information. Mais plusieurs principes essentiels doivent être pris 
+en compte dans la conception des éléments de navigation.
+</p>
+<div class="law-container">
+<table class="law">
+<tr><td> Paradoxe du choix </td></tr>
+<tr><td> <i> Un trop grand nombre d'options nuit à la capacité de prise de décision des utilisateurs. 
+Lorsque la comparaison est nécessaire, nous pouvons éviter la surcharge des choix en permettant la comparaison côte à côte d'éléments 
+connexes et d'options nécessitant une décision. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Loi de Hick </td></tr>
+<tr><td>
+<i> Le temps nécessaire pour prendre une décision augmente avec le nombre et la complexité des choix. 
+Il faut veiller à décomposer les tâches complexes en étapes plus petites afin de réduire la charge cognitive.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Loi de Miller </td></tr>
+<tr> <td><i> Une personne moyenne ne peut conserver que 7 (plus ou moins 2) éléments dans sa mémoire de travail. 
+N'utilisez pas le "chiffre magique sept" pour justifier des limitations inutiles en matière de conception.</i>
+</td> </tr>
+</table>
+</div>
+<p> Pour limiter la charge mentale nécessaire pour trouver de l'information sur un site web, il est donc nécessaire de mettre en place des mécanismes 
+qui aident l'utilisateur à savoir où il est et de lui présenter des options de choix restreintes:
+<ul> 
+<li> structurer les <b>menus avec un faible niveau d'arborescence et des options retreintes</b> qui restent autant que possible sous le nombre de 7 
+(mais le modèle mental reste la priorité);</li>
+<li> libeller les pages avec des <b>termes simples, exclusifs et complémentaires</b>; utiliser <b>le même libellé partout</b> dans le site pour 
+renvoyer vers une même page;
+<li> visibiliser le <b> menu actif</b> en cours de navigation pour aider l'utilisateur à se situer; </li>
+<li> visibiliser les <b> pages déjà visitées </b> pour soutenir la démarche d'exploration;</li>
+<li> proposer un <b>fil d'Ariane</b> pour que l'utilisateur puisse remonter facilement dans l'arborescence; il sera particulièrement heureux de pouvoir
+le faire s'il est arrivé sur le site via une page enfant et non via la page d'accueil;</li>
+<li> proposer un <b>moteur de recherche</b> efficace;</li>
+<li> proposer un <b>plan du site</b>.</li>
+</ul>
+<p> Il me semble aussi intéressant de relever le fait que ces éléments de navigation sont essentiels pour les seniors dont les capacités cognitives déclinent.
+Le moteur de recherche devient leur principal outil de recherche d'information car la navigation dans les menus devient trop complexe.</p>
+<p> Un dernier élément clé de l'expérience utilisateur par rapport à la navigation est la réactivité. C'est précisément ce que sous-tend le seuil
+de Doherty. </p>
+<table class="law">
+<tr><td> Seuil de Doherty</td></tr>
+<tr> <td>
+<i>La productivité explose lorsque l’utilisateur et la machine interagissent à une vitesse suffisante (< 400 ms) pour qu’aucun n’attende l’autre.
+Les barres de progression contribuent à rendre les temps d'attente plus agréables, quelle que soit leur précision.
+</i></td></tr>
+</table>
+<p>
+Cette réactivité mérite vraiment d'être testée lors de la navigation sur le site et lors de recherches via le moteur de recherche. L'extension Page Load 
+Time pour Chrome et Frefox vous propose un rapport très simple avec le temps de chargement de pages sur lesquelles vous naviguez.
+</p>
+<h4 id="button"><a class="header" href="#button"> Designer les boutons d'action </a></h4>
+<p>
+Pour commencer cette section, il me semble opportun de partager une analyse de Peter Pirolli qui m'avait interpelée il y a quelques années: lorsque
+nous recherchons de l'information sur le web, nour reproduisons notre <b>comportement ancestrale de chasseur</b>. Pour bien rendre les idées liées, 
+j'ai refait un peu de veille sur la question avec Consensus et je lui ai demandé de résumer les points essentiels sous forme d'un article au format
+de ceux de the law of ux.
+</p>
+</p>
+<table class="law">
+<tr><td> Loi du chasseur d'information </td></tr>
+<tr> <td>
+<i>Lorsque les utilisateurs recherchent de l'information, ils reproduisent leur comportement ancestral de chasseur : 
+<ul>
+<li>
+Ils restent sur un site tant qu'ils estiment que le « gibier d’information » trouvé par minute 
+vaut le temps et l’effort investis, puis partent dès qu’un autre terrain semble plus prometteur. </li>
+<li>Les décisions sont guidées par l’odeur d’information : titres, extraits, liens, mise en page ou signaux de crédibilité servent d’indices 
+pour estimer la richesse potentielle d’un terrain avant d’y investir plus d’effort.</li>
+<li>Tout au long de la session, l’utilisateur arbitre entre explorer de nouveaux terrains (changer de site, reformuler la requête) 
+et exploiter un terrain riche (lire en profondeur, sauvegarder, vérifier) afin de maximiser son gain d’information sous contraintes de temps, 
+d’incertitude et de risque de passer à côté de mieux ailleurs. </li>
+</ul>
+ </i></td></tr>
+</table>
+<p>
+Notre utilisateur "chasseur" est donc en situation d'urgence et nous devons lui donner des signaux clairs sur les "proies informationnelles"
+qu'il est susceptible de trouver. Ses yeux parcourent l'écran rapidement, à l'affut des indices pour trouver ce qu'il cherche. 
+Il scanne les éléments interactifs qui sont susceptibles de lui donner des indications. Et notre design doit faire en sorte que les boutons 
+d'action soient bien visibles et indiquent clairement l'information qu'ils permettent de trouver. Tous les principes à prendre en compte
+pour designer des boutons d'action qui gardent le chasseur en éveil sont résumés ci-dessous:
+<ul>
+<li> les boutons d'action doivent être <b>affordants</b>, avoir un look de bouton donc et différentes stratégies de mise en forme peuvent
+renforcer leur visibilité : 
+    <ul> <li>la taille du texte du bouton peut être supérieur à la <b>taille</b> de texte par défaut,  </li>
+         <li>la couleur du bouton peut être choisie pour garantir un <b>contraste relatif supérieur</b> au reste du texte (7:1 de contrast ratio), </li>
+         <li>la couleur du bouton peut être <b>plus saturée</b> que les autres couleurs du site.</li>        
+    </ul>
+<li> le texte du bouton doit utiliser un <b>verbe d'action spécifique</b> (pas de liellé du genre "oui","non"; préférer une action "Réserver" à une
+    action "Enregistrer" pour enregistrer une réservation). </li>
+</ul>
+<p>
+La loi de Fitts nous rappelle que la taille d'un bouton est importante mais sa position sur l'écran est aussi déterminante. 
+</p>
+<table class="law">
+<tr><td> Loi de Fitts </td></tr>
+<tr> <td>
+<i>Le temps nécessaire pour atteindre une cible est dépendant de la distance et de la taille de cette cible. Sur des interfaces tactiles, 
+les objets cibles doivent être suffisement grands, suffisemment espacés et placés dans des zones de confort pour l'utilisateur. </i></td></tr>
+</table>
+<p>
+Les boutons d'action essentiels doivent donc être <b>situés dans la partie le plus accessible de l'écran</b>, sans nécessiter de scroll. 
+Et dans un contexte de navigation multi-modale, c'est un beau défi de réussir à placer le bouton dans une zone facilement accessible
+à la fois sur desktop et sur mobile !
+</p>
+<h4 id="liens"><a class="header" href="#liens"> Soigner la présentation des liens </a></h4>
+<p>
+Lorsque le chasseur d'information scanne une page web, ses yeux s'arrêtent sur les boutons d'actions mais aussi sur les liens au sein d'une page.
+Pour que les liens soient des proies intéressantes, les recommandations suivantes sont à prendre en compte pour définir leur libellé et leur mise en forme:
+<ul>
+<li> les liens vers les pages du site doivent avoir un <b>libellé explicite auto-suffisant</b> (pas "Cliquez ici") et tout lien vers une page donnée 
+doit avoir le même libellé sur toutes les pages du site; cette pratique permet de bénéficier de l'<b>effet de simple exposition</b>, qui renforce le sentiment
+positif à l'encontre d'un élément par son exposition répétée. Cela vous amènera parfois à écrire des phrases redondantes, mais 
+les utilisateurs ne le verront sans doute pas car, dans leur chasse à l'information, leurs yeux ne scannent que les liens et les boutons interactifs;</li>
+<li> puisque tous les éléments interactifs sont des proies potentielles, il est important de visibiliser les liens
+au travers d'un <b>texte d'une couleur clairement différente, avec un contraste élevé</b>, d'y associer un <b>effet au survol</b> et, 
+éventuellement mettre le texte du lien en <b>souligné</b> pour lever toute ambiguïté;
+</li>
+<li> pour la facilité de navigation, la <b>couleur des liens visités</b> doit aussi être personnalisée 
+(plutôt dans un ton qui tire sur le rouge) de manière à indiquer au chasseur où il est déjà passé; la mise en forme des liens 
+visités ne doit pas être modifiée au delà de la couleur.
+</li>
+</ul>
+</p>
+<h4 id="home"><a class="header" href="#home"> Designer la page d'accueil </a></h4>
+<p>
+Notre chasseur d'information arrive sur notre site et nous avons <b>3 secondes</b> pour le convaincre que l'information qu'il cherche s'y trouve.
+Tout doit être soigné sur ce premier écran ! L'essentiel doit être dit avant de devoir scoller:
+<ul> 
+<li> un slogan explicite de grande taille résume l'intérêt du site de manière explicite et attractive; 
+ce texte bénéficie d'un constraste élevé pour qu'il attire l'attention; </li>
+<li> ce premier écran présente un ou deux boutons d'action essentiels conçus selon les principes décrits ci-dessus; </li>
+<li> la page est conçue de manière visuelle, les textes sont courts et attractifs, les images et icônes soutiennent 
+les idées véhiculées; les éléments essentiels sont mis en évidence avec des zones d'espace vide; </li>
+<li> les visages humains sont utilisés dans une logique de neurones miroirs, avec des regards orientés vers les boutons 
+d'action principaux;</li>
+<li> le design de la page prend en compte le fait que le scan d'un page suit un pattern en forme de F (le plus souvent),
+de L (en particulier sur petit écran)</li>
+<li> si plusieurs offres tarifaires sont présentées en page d'accueil, l'<b>effet de position centrale</b> 
+tend à rendre l'élément du milieu plus attractif, et une stratégie de design persuasif peut être d'y associer une offre
+moins attractive (<b>effet de leurre</b>) pour renforcer l'attention accordée à l'élément central.</li>
+</ul>
+</p>
+<p> Est ce que le fenêtre pop-up pour s'abonner à la <b>newsletter</b> est une bonne idée pour la page d'accueil ? Le processus est très intrusif et 
+peut être ignoré par les utilisateurs. Si cette newsletter est importante, il est peut-être préférable que l'invitation soit intégrée à la page d'accueil.
+</p>
+<h4 id="list"><a class="header" href="#list"> Désigner un écran avec une liste d'éléments </a></h4>
+<p> 
+Certains écrans sont construits pour présenter une série d'éléments qui peuvent être une liste de résumés d'articles de blogs, 
+une liste de produits, une liste de dossiers administratifs, une liste de résultats de recherche, ... Rappelons tout d'abord 
+que les utilisateurs ont tendance à parcourir ce type d'écran avec un <b>pattern en Z</b>.
+Arrêtons-nous aussi sur les principes qui ciblent précisément la manière d'agencer une liste d'éléments 
+car ils sont nombreux.
+</p>
+<p> 
+Les premiers principes à avoir en tête sont les <b>principes de la Gestalt, ou principes de la psychologie de la forme</b>. 
+Ces principes présentent différentes déclinaisons mais le site <a href="https://lawsofux.com/fr/">The laws of UX</a> 
+les synthétise au travers des 3 principes suivants qui métitent d'être pris en compte pour présenter une liste d'éléments:
+<p>
+<div class="law-container">
+<table class="law">
+<tr><td> Loi de proximité </td></tr>
+<tr><td> <i>Les objets qui sont proches les uns des autres ont tendance à être percus comme des groupes.
+La proximité aide les utilisateurs à comprendre et à organiser l'information plus rapidement et plus efficacement. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Loi de similarité </td></tr>
+<tr><td>
+<i> Les éléments qui sont visuellement similaires seront perçus comme étant liés.
+La couleur, la forme et la taille, l'orientation et le mouvement peuvent indiquer que les éléments 
+appartiennent au même groupe et partagent probablement une signification ou une fonctionnalité commune.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Loi de la région commune </td></tr>
+<tr> <td><i> La région commune crée une structure claire et aide les utilisateurs à comprendre rapidement 
+et efficacement la relation entre les éléments et les sections. L'ajout d'une bordure ou d'un arrière-plan 
+autour d'un groupe d'éléments est un moyen facile de créer une région commune. </i>
+</td> </tr>
+</table>
+</div>
+<p>Pour prendre en compte ces 3 principes, la présentation d'une liste d'éléments doit suivre la présentation suivante:
+<ul> 
+<li> chaque élément doit être présenté avec une <b>mise en forme commune</b> qui permet de visuellement identifier ce type d'élément
+(bordure ou arrière-plan pour définir un élément);</li>
+<li> si un élément est décrit pas plusieurs champs (titre, image, description courte, tags, ...) ces champs 
+     sont agencés de manière visuelle en veillant à leur proximité puisqu'ils sont liés au même élément;
+     </li> 
+<li> on veille particulièrement à éviter qu'une photo puisse être associée par proximité à un élément erroné.</li>
+</ul>
+</p>
+<p> Le design de liste d'éléments prendra aussi en compte les lois liées à la gestion des choix
+(déjà abordées dans la partie sur la navigation) :</p>
+<div class="law-container">
+<table class="law">
+<tr><td> Paradoxe du choix </td></tr>
+<tr><td> <i> Un trop grand nombre d'options nuit à la capacité de prise de décision des utilisateurs. 
+Lorsque la comparaison est nécessaire, nous pouvons éviter la surcharge des choix en permettant la comparaison côte à côte d'éléments 
+connexes et d'options nécessitant une décision. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Loi de Hick </td></tr>
+<tr><td>
+<i> Le temps nécessaire pour prendre une décision augmente avec le nombre et la complexité des choix. 
+Il faut veiller à décomposer les tâches complexes en étapes plus petites afin de réduire la charge cognitive.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Loi de Miller </td></tr>
+<tr> <td><i> Une personne moyenne ne peut conserver que 7 (plus ou moins 2) éléments dans sa mémoire de travail. 
+N'utilisez pas le "chiffre magique sept" pour justifier des limitations inutiles en matière de conception.</i>
+</td> </tr>
+</table>
+</div>
+<p> Par rapport à la présentation d'une liste d'éléments, ces principes nous indiquent l'importance de proposer 
+des <b>filtres de recherche pertinents</b> pour limiter la longueur de la liste que l'utilisateur doit analyser et 
+être au plus proche de son besoin. La possibilité de <b>comparaison des éléments</b> peut aussi faciliter le travail
+d'analyse de l'utilisateur. </p>
+<p>
+Plusieurs principes issus du <b>design persuasif</b> peuvent aussi guider la présentation d'une liste d'éléments:
+<div class="law-container">
+<table class="law">
+<tr><td> Effet de primauté </td></tr>
+<tr><td> <i> Les premiers éléments d'une série sont mieux mémorisés. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Effet de position centrale <br/> Effet de leurre </td></tr>
+<tr><td>
+<i> Lorsque des éléments sont alignés, l'élément central est préféré. Cet effet peut être renforcé par l'introduction 
+d'un élément volontairement moins attractif pour stimuler l'intérêt pour l'option centrale.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Effet de récence  </td></tr>
+<tr> <td><i> Les derniers éléments d'une série sont mieux mémorisés.</i>
+</td> </tr>
+</table>
+</div>
+<div style="height:30px"></div>
+<div class="law-container">
+<table class="law">
+<tr><td> Effet d'immédiateté </td></tr>
+<tr><td> <i> L'utilisateur a tendance à favoriser la récompense la plus rapide malgré une valeur moindre. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Effet de disponibilité </td></tr>
+<tr><td>
+<i> La mise en avant de certains contenus (comme les plus consultés) empêche l'utilisateurd'envisager une autre option que
+celle proposée.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Effet de rareté </td></tr>
+<tr> <td><i> Les utilisateurs ont tendance à donner plus de valeur à un produit rare qu'à un produit disponible en abondance.</i>
+</td> </tr>
+</table>
+</div>
+<div style="height:30px"></div>
+<div class="law-container">
+<table class="law">
+<tr><td> Effet de choix par défaut  </td></tr>
+<tr><td> <i> L'utilisateur a tendance à privilégier le choix qui exige le moins d'effort. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Effet d'avoir / Effet d'utiliser </td></tr>
+<tr><td>
+<i> L'utilisateur a tendance à préférer les poiduits contenant de multiples fonctionnalités, qu'importe leur utilité ou nécessité.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Effet Van Restorff </td></tr>
+<tr> <td><i> L'utilisateur mémorise mieux un élément qui se distingue des autres.</i>
+</td> </tr>
+</table>
+</div>
+</p>
+<p>
+Ces principes nous indiquent aussi que les listes d'éléments doivent aussi proposer:
+<ul>
+<li> des <b>options de tri</b> pertinentes pour l'utilisateur (pour que les premiers éléments présentés soient les plus pertinent);</li>
+<li> la liste des <b>éléments visités</b> (pour retrouver facilement les éléments récents).</li>
+</ul>
+</p>
+<p> Pour les sites de vente en ligne qui présentent une liste de produits, les mécanismes suivants peuvent contribuer 
+à stimuler les ventes (mais il faut veiller à ne pas sombrer dans une logique de dark pattern et éviter de manipuler artificiellement ces éléments):
+<ul>
+<li> présenter une offre centrale attrayante et permettre sa comparaison avec les autres offres en listant les options associées;</li>
+<li> masquer les produits indisponibles ou permettre d'être tenu informé quand ils seront de nouveau à disposition;</li>
+<li> visibiliser le stock de produit;</li>
+<li> visibiliser les produits les plus consultés, les labels de type "maître achat", les avis des consommateurs, ...</li>
+</ul>
+</p>
+<h4 id="form"><a class="header" href="#form"> Designer les formulaires </a></h4>
+<p>
+Il me semble intéressant de rappeler que les principes liés à la présentation de listes d'éléments entrent en considération
+dans la présentation des formulaires. Plus précisément, les principes suivant sont essentiels lors de la mise en page des formulaires:
+</p>
+<div class="law-container">
+<table class="law">
+<tr><td> Loi de proximité </td></tr>
+<tr><td> <i> Les objets qui sont proches les uns des autres ont tendance à être percus comme des groupes.
+La proximité aide les utilisateurs à comprendre et à organiser l'information plus rapidement et plus efficacement. </i></td></tr>
+<table>
+<table class="law">
+<tr><td> Loi de la région commune </td></tr>
+<tr><td>
+<i> La région commune crée une structure claire et aide les utilisateurs à comprendre rapidement 
+et efficacement la relation entre les éléments et les sections. L'ajout d'une bordure ou d'un arrière-plan 
+autour d'un groupe d'éléments est un moyen facile de créer une région commune.
+</i> </td></tr>
+</table>
+<table>
+<table class="law">
+<tr><td> Loi de Miller </td></tr>
+<tr> <td><i> Une personne moyenne ne peut conserver que 7 (plus ou moins 2) éléments dans sa mémoire de travail. 
+N'utilisez pas le "chiffre magique sept" pour justifier des limitations inutiles en matière de conception.</i>
+</td> </tr>
+</table>
+</div>
+<p>
+Concrètement, lors de la mise en page des formulaires, on veillera à respecter les recommandations suivantes:
+<ul> 
+<li> le <b>libellé</b> d'un champ est proche et placés à la gauche du champ ou au-dessus (principe de proximité);</li>
+<li> corollaire : la présentation des champs évite toute ambiguïté entre un libellé et le champ associé; 
+pour présenter les options liées à des cases à cocher par exemple, on privilégie une présentation 
+avec une option par ligne;</li>
+<li> les champs <b>obligatoires</b> d'un formulaire sont explicitement indiqués avec une étoile 
+(pour minimiser les erreurs et pour suivre les conventions de présentation);</li>
+<li> si les champs optionnels sont nombreux, ils sont présentés dans un bloc replié par défaut;</li>
+<li> pour le champ qui exigent l'encodage des données dans un <b>format</b> prédéfini, le format est explicité au départ 
+dans un descriptif associé au champ par exemple et le message d'erreur retourné spécifie explicitement comment corriger l'erreur;</li>
+<li> les formulaires qui comptent plus de 10 champs sont structurés avec des <b>groupes</b> (fieldset) avec des libellés 
+de groupes qui suivent les modèles mentaux des utilisateurs et qui comptent de l'ordre de 7 champs par groupe;</li>
+<li> les formulaires très longs sont présentés en plusieurs écrans, avec des libellés qui suivent les modèles mentaux 
+des utilisateurs, sous la forle d'un <b>wizard progressif</b> où l'utilisateur peut facilement visualiser sa progression 
+dans l'encodage;</li>
+<li> pour que les formulaires soient <b>accessibles</b> aux personnes qui souffrent de déficiences visuelles et qui naviguent 
+avec un lecteur d'écran, il faut au moins veiller à permettre de naviguer entre les champs via les touches de tabulation mais 
+aussi soigner la manière de définir les libellés et types de champs comme décrit dans l'article W3C
+<a href="https://wcagkit.com/blog/accessible-forms-guide" taget="_blank">
+Accessible form guide</a>.</li>
+</ul>
+ <h4 id="reassurance"><a class="header" href="#reassurance"> Stimuler la réassurance </a></h4>
+<p> 
+La réassurance désigne l’ensemble des éléments qui rassurent l’utilisateur à chaque étape de son parcours, afin de réduire ses doutes, ses peurs ou ses hésitations.
+Le leviers de la réassuance sont les suivants :
+<ul>
+<li>la <b>crédibilité</b> est basée sur l'expertise et le respect des pratiques sûres, ces éléments peuvent être objectivés au travers
+de labels, de chiffres explicites, de certifications, d'avis clients, de systèmes de paiement sécurisés, de l'utilisation du protocole https,
+d'une mention RGPD qui précise clairement les données
+collectées et leur utilisation ...</li>
+<li>la <b>transparence</b> repose sur des conditions générales de vente claires, sur un parcours d'action clair, sur une tarification claire sans frais cachés, sur des possibilités de comparaison, sur une utilisation respectueuse des données personnelles, ...</li>
+<li>l'<b>accompagnement</b> se conctétise pas des messages d'aide contextuelle, des systèmes de support ou de FAQ, un feedback immédiat et clair après une action;</li>
+<li>l'<b>engagement</b> soutient la fidélication au travers des conditions de livraison, de garantie, de retour. </li>
+</ul>
+</p>
+<h4 id="ecriture"><a class="header" href="#ecriture"> Rédiger du texte pour le web </a></h4>
+<p> 
+La rédaction de texte pour le web exige tout d'abord de définire une <b>ligne éditoriale</b> qui définit le cadre stratégique de production : 
+la thématique, l'angle d'approche, la cible, les valeurs. Ensuite, la <b> charte éditoriale</b> est un document plus opérationnel qui définit le ton
+et le style rédactionnel, les formats de contenus, les règles de rédaction, et le processus éditorial.
+</p>
+<p>
+La rédaction de texte pour le web doit se centrer sur des contenus courts et structurés de manière visuelle (images, listes, ...).
+Les principes suivants d'UX writing doivent être pris en compte lors de la rédaction:
+<ul>
+<li>commencer par l'idée principale dans une phrase;</li>
+<li>être bref;</li>
+<li><b>aller droit au but</b>;</li>
+<li>utiliser des <b>verbes d'action précis</b>;</li>
+<li>éviter les acronymes et les fautes d'orthographe;</li>
+<li>utilser un <b>vocabulaire simple</b>;</li>
+<li>utiliser la voix active pour l'utilisateur et la voix passive pour le système;</li>
+<li></b>se concentrer sur l'utilisateur</b>, sur ce qu'il vit;</li>
+<li>montrer la <b>présence humaine</b> dans le processus;</li>
+<li>privilégier l'<b>écriture inclusive</b>, non genrée.</li>
+</ul>
+</p>
+<p> Une belle référence qui résume tout l'intérêt de l'écriture inclusive sur base de références scientifiques :
+la <a href="https://www.youtube.com/watch?v=url1TFdHlSI" target="blank">vidéo de Scilabus sur l'écriture inclusive</a>. 
+<h4 id="ref"><a class="header" href="#ref"> Les réféfences qui m'inspirent </a></h4>
+<p>
+Cet article s'inspire des <a href="references.html">références générales</a> exploitées pour tous les articles 
+de ce site et s'appuie aussi sur les références suivantes:
+<ul>
+<li> le site <a href="https://lawsofux.com/fr/" target="_blank">The laws of UX</a> associé au livre du même nom de Jon Yablonski est la source de base
+pour les principales lois citées;</li>
+<li> les <a href="https://www.w3.org/TR/WCAG22/" target="_blank">règles d'accessibilité du W3C </a> restent une référence centrale dans ma pratique notamment 
+car elles définissent des critères mesurables pour toutes les propriétés comme le contraste;</li>
+<li> les éléments d'information qui concernent la recherche d'information par le public des seniors se basent sur les articles
+<a href="https://arxiv.org/abs/2010.13352" target="_blank"> The Age-related Differences in Web Information Search Process </a> de Z.Xing & al. ainsi que des 
+<a href="https://www.w3.org/WAI/EO/2008/wai-age-tf.html" target="_blank">travaux du groupe W3C WAI-AGE Task Force</a> 
+dont j'ai fait partie et une partie des recommandations de cette page 
+s'inspire aussi de l'article
+<a href="https://www.igi-global.com/chapter/senior-web-accessibility/43509" target="_blank"> 
+The Senior Web Accessibility: The Laws, the Standards and the Practices  </a>
+dont je suis l'auteure avec Monique Noirhomme-Fraiture; </li>
+<li> l'article qui illustre le fait que nous reproduisons notre comportement de chasseur lorsque nous recherchons de l'information sur le web est
+<a href="https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog0000_20" target="_blank">Rational Analyses of Information Foraging on the Web </a> de P.Pirolli.
+ </li>
+</ul>
+</p>
+<h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> 
 
                     </main>
 

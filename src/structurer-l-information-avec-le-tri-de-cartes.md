@@ -144,3 +144,5 @@ La méthode a été notamment formalisée et diffusée par des chercheurs comme 
 Elle s’inscrit dans un mouvement plus large influencé par les travaux de Don Norman, qui ont contribué à
  mettre en avant l’importance des modèles mentaux des utilisateurs dans la conception des systèmes interactifs.
 </p>
+
+<h6> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </h6> 

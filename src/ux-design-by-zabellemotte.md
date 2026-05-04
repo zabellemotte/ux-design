@@ -17,7 +17,7 @@ L'approche est structurée en <b>5 étapes</b> qui inspirent la structure de ce 
 <li>Evaluation : Test des prototypes ou évolutions </li>
 </ol>
 <p>Les trois dernières étapes sont à envisager de manière itérative pour conduire la finalisation du produit et ses évolutions.</p>
-<p>Ne perdez plus jamais la main sur vos projets, gravitez sur la même orbite que vos utilisateurs !
+<p>Ne perdez plus jamais la main sur vos projets, gravitez sur la même orbite que vos utilisateurs </p>
 
 
 <h4 id="pourquoi"> Pourquoi impliquer les utilisateurs ? </h4>
@@ -40,6 +40,7 @@ https://doi.org/10.1006/ijhc.2001.0503 </a></li>
 <li> International Organization for Standardization. (2019). Ergonomics of human-system interaction — Part 210: Human-centred design for interactive systems (ISO 9241-210:2019). ISO. 
 <a href="https://www.iso.org/standard/77520.html" target="_blank">https://www.iso.org/standard/77520.html </a></li>
 <li> Sheppard, B., Sarrazin, H., Kouyoumjian, G., & Dore, F. (2018). The business value of design. McKinsey & Company <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-business-value-of-design" target="_blank"> https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-business-value-of-design</a> </li>
+</ul>
 </p>
 
 <h4 id="qui">Qui suis-je ?</h4>

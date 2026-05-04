@@ -2,12 +2,12 @@
 <h4 id="survol">En un coup d'oeil </h4>
 <div class="zabcontainer">
     <div class="zableft">
-      <img src="images/evaluation-experte-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+      <img src="images/evaluation-grille-experte-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
     </div>
     <div class="zabright">
         <dl class="zab-method-dl">
             <dt>Etape UX</dt>
-            <dd>5. Evaluation experte</dd>
+            <dd>5. Evaluation</dd>
             <dt>Catégorie</dt>
             <dd>UX Design</dd>
             <dt>Intérêt</dt>
@@ -15,9 +15,10 @@
             <dt>Complexité</dt>
             <dd>Moyenne</dd>
             <dt>Durée</dt>
-            <dd>Quelques heures, si possible pour 5 évaluateurs</dd>
+            <dd>Quelques heures, si possible pour 5 évaluateurs experts</dd>
             <dt>En vidéo</dt>
-            <dd><a href="https://www.youtube.com/watch?v=TSs0iB6gxV4" target="_blank">A Practical Type of Empathy - Indi Young Keynote (O'Reilly)</a></dd>
+            <dd><a href="https://www.youtube.com/watch?v=h06XzKIsbas&t=340s" target="_blank">
+            Les critères heuristiques (Onepoint)</a></dd>
         </dl>
     </div>
   </div>
@@ -32,9 +33,9 @@
 <h4 id="resume"> En résumé</h4>
 <p>
 Les évaluations heuristiques se basent sur des grilles expertes éprouvées comme 
-la <a href="https://usabilis.com/wp-content/uploads/2026/03/Criteres-Ergonomiques-pour-l-Evaluation-d-Interfaces-Utilisateur-Scapin-Bastien.pdf" target="_blank">grille de Bastien&Scapin</a> ou
+la <a href="https://usabilis.com/wp-content/uploads/2026/03/Criteres-Ergonomiques-pour-l-Evaluation-d-Interfaces-Utilisateur-Scapin-Bastien.pdf" target="_blank">grille de Bastien & Scapin</a> ou
 la <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">grille de Nielsen</a>. L'idéal est d'être en mesure de mobiliser
-plusieurs utilisateurs, idéalement 5 experts, pour relever 75% des problèmes d'ergonomie. Elle exige
+plusieurs utilisateurs, idéalement 5 experts, pour relever jusqu'à 75% des problèmes d'ergonomie. Elle exige
 toutefois un temps de mise en contexte pour les évaluateurs s'ils ne sont pas familiers avec
 le métier. L'intérêt l'évaluation heuristique est qu'elle peut coûteuse et permet de compléter 
 les tests utilisateurs pour améliorer l'interface.
@@ -43,7 +44,7 @@ les tests utilisateurs pour améliorer l'interface.
 
 <h4 id="prepa"> Organiser une évaluation heuristique</h4>
 
-<p> L'organisation d'une évaluation experte se base sur les <b>étapes</b> suivantes :
+<p> L'organisation d'une évaluation heuristique se base sur les <b>étapes</b> suivantes :
 <ul> 
 <li> le choix d'une ou plusieurs <b>grilles</b> d'évaluation; </li>
 <li> la définition de la ou des <b>personas</b> ciblés par l'analyse; </li>  
@@ -69,7 +70,8 @@ avec les éléments suivants:
         <li>mineur : peu fréquent et évitable;</li>
         <li>cosmétique : rare et facilement évitable; </li>
         </ul>
-<li> l'observation et les risques;</li>
+<li> l'<b>observation</b>: </li>
+<li> les <b>risques</b> liées clairement explicités;</li>
 <li> un ou des <b>recommandations</b>; </li>
 <li> des éventuelles ressources associées. </li>
 </ul>
@@ -174,7 +176,7 @@ pour la ou les personas du site. </li>
 <h4 id="autres"> Autres grilles d'évaluation </h4>
 <p>
 L'article <a href="https://hal.science/hal-01207449/" target="_blank"> Évolution de l’inspection heuristique : vers une
-intégration des critères d’accessibilité, de praticité, d’émotion et de persuasion dans l’évaluation ergonomique </a> de E.Brangier & al. 
+intégration des critères d’accessibilité, de praticité, d’émotion et de persuasion dans l’évaluation ergonomique </a> de E.Brangier & al 
 dresse une analyse des grilles heuristiques pratiquées et montre qu'elles ont subi l'influence de différentes disciplines pour se focaliser
 successivement sur l'accessibilité, la praticié, l'émotionalité et la persuasivité. 
 </p>
@@ -182,16 +184,23 @@ successivement sur l'accessibilité, la praticié, l'émotionalité et la persua
 <p> Ma pratique professionnelle m'a amenée à pratiquer d'autres grilles heuristiques :
 <ul> <li> <a href="https://www.w3.org/Translations/WCAG21-fr/" target="_blank">les règles d'accessibilité du W3C </a>, qui visent à rendre les contenus
 accessibles à tous, sur tous les devices (sans cibler explicitement les personnes handicapées); elles ont le gros avantage d'être composées de critères
-mesurables qui permettent par exemple de définir objectivement ce qu'est un contraste élevé pour un titre ou un bouton;</li>
+mesurables qui permettent par exemple de définir objectivement ce qu'est un contraste élevé pour un titre ou un bouton; 
+cette grille est plus technique et le W3C est un organisme de standardisation plutôt reconnu par les professionnels informaticiens;
+elle me semble avoir plus de poids auprès des profils techniques;</li>
 <li> <a href="https://fr.wikipedia.org/wiki/ISO_9241" target="_blank"> la norme ISO 9241</a> est une référence essentielle qui se décline pour
-à peu près tous les systèmes d'interaction humain-machine; les déclinaisons 800 abordent même les environnements immersifs; ces documents sont payants
-mais il est possible d'y avoir accès via les bibliothèques universitaires; ces références permettent de justifier toutes les étapes de la démarche UX:
-<ul> <li> ISO-9241-210 permet de justifier la démarche centrée utilisateur;  </li>
+à peu près tous les systèmes d'interaction humain-machine; ces documents sont payants
+mais il est possible d'y avoir accès via les bibliothèques universitaires; 
+ces références permettent de justifier toutes les étapes de la démarche UX:
+<ul> <li> ISO-9241-210 permet de justifier toute la démarche centrée utilisateur;  </li>
+     <li> ISO-9241-110 propose des recommandation pour la conception proches de celles de Bastien & Scapin;  </li>
      <li> ISO-9241-143 étudie l'ergonomie des formulaires; </li>
      <li> ISO-9241-115 cible la navigation et évoque notamment l'importance d'organiser l'information selon le modèle mental des utilisateurs; </li>
+     <li> ISO-9241-910 et 920 étudient les interactions tactiles et haptiques; </li>
+     <li> ISO-9241-820 étudie les environnements immersifs; </li>
      <li> et bien d'autres selon vos projets.
 </ul>
-L'avantage de ce type de norme est le poids qu'elle représentent pour motiver une décision dans une grande entreprise.
+L'avantage de ce type de norme est le poids qu'elle représentent pour motiver une décision dans une grande entreprise. Elle parle aussi bien aux décideurs
+qu'aux techniciens.
 </li>
 </ul>
 </p>
@@ -199,16 +208,19 @@ L'avantage de ce type de norme est le poids qu'elle représentent pour motiver u
 <p> 
 D'autres grilles me semblent intéressantes à épingler :
 <ul>
-<li> la <a href="https://www.sciencedirect.com/science/article/abs/pii/S0920548915000926" target="_blank"> grille SMASH </a>
-de R.Inostroza&al pour les interfaces mobiles;</li>
+<li> la <a href="https://www.sciencedirect.com/science/article/abs/pii/S0920548915000926" target="_blank"> grille SMASH pour les interfaces mobiles </a>
+de R.Inostroza & al;</li>
 <li> la <a href="https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=G0hQweQAAAAJ&citation_for_view=G0hQweQAAAAJ:tS2w5q8j5-wC" target="_blank"> 
   grille dédicacée aux sites de e-commerce </a>
-de L.Bonastre&T.Granollers;</li>
+de L.Bonastre & T.Granollers;</li>
 <li> la <a href="https://www.researchgate.net/publication/220587882_User_Interface_Design_for_Public_Kiosks_An_Evaluation_of_the_Taiwan_High_Speed_Rail_Ticket_Vending_Machine" target="_blank">
  grille dédicacée aux bornes interactives </a>
-de F.E.Sandnes&al.;</li>
+de F.E.Sandnes & al;</li>
+<li> la <a href="https://link.springer.com/chapter/10.1007/978-1-84882-963-3_13" target="_blank">
+ grille dédicacée aux jeux vidéos </a>
+de C.Koeffel & al;</li>
 <li> et bien d'autres à trouver via un travail de veille scientifique soutenu par un outil d'IA dédicacé comme 
-<a href="https://elicit.com/" target="_blank"> Elici.com</a>.
+<a href="https://elicit.com/" target="_blank"> Elicit.com</a>.
 </ul>
 <p>
 
@@ -220,6 +232,8 @@ rapide des interfaces basée sur un ensemble de principes généraux d’utilisa
 « heuristiques ». 
 L’idée était de permettre à des experts d’identifier efficacement des problèmes d’ergonomie 
 sans recourir à des tests utilisateurs lourds. 
-Cette approche s’inscrit dans l’évolution plus large de l’Interaction Homme-Machine, 
+Cette approche s’inscrit dans l’évolution plus large de l’Interaction Humain-Machine, 
 qui cherchait à structurer des méthodes d’évaluation systématiques et pragmatiques.
 </p>
+
+<h6> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </h6> 
