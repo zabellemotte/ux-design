@@ -38,4 +38,6 @@
     - [Prioriser les actions avec la matrice urgent et important](./prioriser-les-actions-avec-la-matrice-urgent-et-important.md)
 - [5. Evaluation](./5-evaluation.md)
     - [Evaluer l'UX à l'aide de grilles d'évaluation expertes](./evaluer-l-ux-a-l-aide-de-grilles-d-evaluation-expertes.md)
+    - [Organiser un test utilisateur, l'approche la plus puissante pour améliorer l'UX](./organiser-un-test-utilisateur.md)
+    - [Exploiter les échelles d'évaluation de l'UX](./exploiter-les-echelles-d-evaluation-de-l-ux.md)
 - [Références](./references.md)

@@ -1,0 +1,492 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Organiser un test utilisateur, l&#x27;approche la plus puissante pour améliorer l&#x27;UX - UX Design by zabellemotte</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UX Design by zabellemotte</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="organiser-un-test-utilisateur-lapproche-la-plus-puissante-pour-améliorer-lux"><a class="header" href="#organiser-un-test-utilisateur-lapproche-la-plus-puissante-pour-améliorer-lux">Organiser un test utilisateur, l'approche la plus puissante pour améliorer l'UX</a></h1>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/test-utilisateur-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>5. Evaluation</dd>
+            <dt>Catégorie</dt>
+            <dd>UX design</dd>
+            <dt>Intérêt</dt>
+            <dd>Induire une dynamique d'amélioration continue du produit au travers d'un exercice de mise en situation réelle</dd>
+            <dt>Complexité</dt>
+            <dd>Moyenne</dd>
+            <dt>Durée</dt>
+            <dd>Maximum 90 minutes avec minimum 5 utilisateurs</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=v8JJrDvQDF4" target="_blank">User Testing : Why | How (Jacob Nielsen, NNgroup)</a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="#resume"> En résumé </a></li>
+<li> <a href="#tot">Tester tôt et tester souvent</a> </li>
+<li> <a href="#scenarios">Etape 1 : Définir les scénarios de test</a> </li>
+<li> <a href="#mode">Etape 2 : Choisir une modalité de test utilisateur</a> </li>
+<li> <a href="#grille">Etape 3 : Préparer la grille d'observation et définir les indicateurs de suivi</a> </li>
+<li> <a href="#utilisateurs">Etape 4 : Recruter les utilisateurs</a> </li>
+<li> <a href="#animation">Etape 5 : Animer un test utilisateur</a> </li>
+<li> <a href="#rapport"> Etape 6 : Rédiger un rapport de compte-rendu d'un test utilisateur</a> </li>
+<li> <a href="#histoire">La petite histoire</a> </li>
+</ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé</a></h4>
+<p>
+Le <b>test utilisateur</b> est la méthode UX qui offre le plus grand rapport bénéfice/coût. 
+Elle consiste à évaluer l'UX en observant la façon dont les utilisateurs de servent du produit pour réaliser des tâches.
+</p>
+<p> La méthode s'applique tout au long du processus de conception, dès les premières maquettes, sur les prototypes et sur des produits du marché concurrents ou pressentis.
+Elle exige la préparation de scénarios, d'une grille d'observation et l'expérience se clôture souvent par une interview et/ou une évaluation via une échelle UX.
+</p>
+<p>
+L'objectif essentiel du test utilisateur dans la démarche UX est de <b>détecter les problèmes</b>. Sa mise en oeuvre est simple mais exige de respecter les <b>conditions pour son efficience </b>:
+<ul>
+<li>mobiliser <b> minimum 5 utilisateurs </b>;</li>
+<li>recruter des <b>utilisateurs représentatifs</b> du public cible (personas envisagés, usages, genre, âge, aisance avec les technologies,  ...);</li>
+<li>définir des <b>scénarios</b> de test réalistes;</li>
+<li>organiser des <b>rencontres individuelles</b> pour tester;</li>
+<li>introduire le test en se montrant <b>à l'écoute</b> des adaptations et corrections; </li>
+<li>demander à l'utilisateur de <b>penser à voix haute</b> pendant le test pour être en mesure de comprendre son cheminement;</li>
+<li>associer le test à une <b>discussion</b> et/ou à une <b>évaluation par échelle UX</b>, pour être en mesure d'objectiver l'impact des évolutions;</li>
+<li>éventuellement, rédiger un <b>rapport</b> pour donner des lignes de conduite pour améliorer le produit.</li>
+</ul>
+</p>
+<h4 id="tot"><a class="header" href="#tot"> Tester tôt et tester souvent </a></h4>
+<p>
+Le test utilisateur est au coeur de la démarche centrée utilisateur et il est utilisé tout au long de la conception:
+<div class="table-wrapper"><table><thead><tr><th>Support testé</th><th>Objectif du test</th><th>Description</th></tr></thead><tbody>
+<tr><td>Maquettes</td><td>Explorer le besoin</td><td>Tester les options envisagées pour le système pour identifier les éléments manquants, les problèmes et les corriger</td></tr>
+<tr><td>Prototype fonctionnel</td><td>Evaluer et améliorer le prototype</td><td>Tester le système pour simuler l'exécution de tâches spécifiques</td></tr>
+<tr><td>Prototype final</td><td>Valider le prototype</td><td>Tester le système dans sa version finale pour vérifier qu'il correspond bien aux exigences attendues</td></tr>
+<tr><td>Maquettes ou prototypes</td><td>Comparer plusieurs solutions = A/B Testing</td><td>Tester plusieurs alternatives d'un même système pour identifier les forces et faiblesses de chacunes</td></tr>
+<tr><td>Produits sur le marché</td><td>Etudier le marché</td><td>Etudier les systèmes sur le marché pour choisir un système ou faire évoluer la conception d'un système équivalent</td></tr>
+</tbody></table>
+</div></p>
+<p> La préparation d'un plan de test peut être soutenue par une fiche à compléter comme la 
+<a href="https://medium.com/@userfocus/the-1-page-usability-test-plan-dbc8c3d7fb54" target="_blank">fiche "The usability test plan dashboard" proposée par David Travis</a>.
+<h4 id="scenarios"><a class="header" href="#scenarios"> Etape 1 : Définir les scénarios de test </a></h4>
+<p> Selon le support testé et l'objectif du test, il faut définir des <b>scénarios de test réalistes</b> qui permettront d'évaluer le produit. 
+Dans une application complexe, il est aussi possible de se focaliser sur les tâches fréquentes, sur les tâches les plus complexes ou sur
+un processus qui doit être révisé. L'idée est de <b>décrire des tâches de manière générique</b>, sans préciser le cheminement à utiliser pour 
+observer comment l'utilisateur procède. Les scénarios sont rédigés en phrases courtes et facilement compréhensibles, sans mentionner les 
+labels précis des menus ou boutons à utiliser pour réaliser la tâche. 
+</p>
+<p>
+Il est important de veiller à <b> prétester </b> les scénarios, pour plusieurs raisons:
+<ul><li>vérifier que la formulation des phrases est bien comprise;</li>
+<li>vérifier qu'aucun bug ne se présente quand on réalise le "happy flow",le flux normal prévu pour réaliser la tâche;</li>
+<li>estimer le temps de passation.</li>
+</ul>
+<p>
+<p> Par exemple, pour tester une application qui permet de gérer les formations internes, un scénario d'usage de base pourrait être le suivant:
+<ul>
+<li>se connecter à la plateforme;</li>
+<li>rechercher une formation précise;</li>
+<li>s'inscrire à la formation;</li>
+<li>recherche une autre formation au choix et s'y inscrire; </li>
+<li>se désinscrire de la première formation; </li>
+<li>trouver les attestations liées aux formations déjà validées.</li>
+</ul>
+Dans cet exemple, des variantes de scénario peuvent être envisagées selone les modalités de formation (en présences, à distance, ...) 
+et selon les modes d'inscription proposés (libre, avec validation, ...) s'ils ont un impact sur l'expérience utilisateur. 
+</p>
+<h4 id="mode"><a class="header" href="#mode"> Etape 2 : Choisir une modalité de test utilisateur </a></h4>
+<p>
+Les tests utilisateurs peuvent se dérouler selon <b>4 modalités</b> allant de l’évaluations contrôlées en laboratoire, très structurées et coûteuses, à des tests guérilla, 
+plus rapides, légers et exploratoires.</p>
+<div class="table-wrapper"><table><thead><tr><th>Modalité</th><th>Lieu et matériel</th><th>Objectif</th></tr></thead><tbody>
+<tr><td>Test en situation contrôlée</td><td>Laboratoire d'utilisabilité avec salle de test isolée et salle d'observation, système d'enregistrement des actions utilisateur, ...</td><td>Recherche en ergonomie et utilisabilité</td></tr>
+<tr><td>Test en contexte naturel</td><td>Contexte de travail de l'utilisateur, avec éventuel <a target="_blank" href="https://lollypop.design/blog/2025/january/usability-testing-tools/">outil d'enregistrement et d'analyse des actions</a></td><td>Amélioration continue d'un produit en conception ou comparaison de produits du marché</td></tr>
+<tr><td>Test à distance</td><td>Contexte de travail de l'utilisateur, réunion enregistrée, post-traitement soutenu par outil d'analyse ou par IA</td><td>Amélioration continue d'un produit en conception ou comparaison de produits du marché</td></tr>
+<tr><td>Test en mode guérilla</td><td>Lieu public</td><td>Prétest rapide d'un prototype ou d'un produit du marché pour explorer les besoins et/ou détecter les problèmes</td></tr>
+</tbody></table>
+</div></p>
+<p> Si le test doit seulement mettre en évidence des points d'amélioration, sans enjeu stratégique, l'enregistrement n'est pas indispensable.
+Mais si l'objectif est de définir des orientations pour faire évoluer un projet, les verbatims utilisateur seront précieux et l'enregistrement est alors souhaitable.
+</p>
+<p> Selon la modalité choisie, privilégiez une passation de test qui permettent de <b>placer l'utilisateur dans son environnement d'utilisation habituel</b>. 
+Si le test se déroule en présence, n'hésitez pas à vous déplacer sur le lieu de travail ou à inviter l'utilisateur à emporter
+son ordinateur personnel pour le test. S'il se déroule à distance, 
+exploitez la solution de réunion virtuelle usuelle pour la personne.
+</p>
+<h4 id="grille"><a class="header" href="#grille"> Etape 3 : Préparer la grille d'observation et définir les indicateurs de suivi</a></h4>
+<p> Les indicateurs minimalistes pour un test utilisateur sont le <b>nombre d'erreurs rencontrées et leur description</b>. </p>
+<p>
+Si vous envisagez une analyse plus détaillée, vous pouvez prévoir d'<b>enregistrer les tests</b>.
+Cela permet d'être moins attentif pendant la passation, 
+mais l'analyse des enregistrements exigera un post-traitement. 
+Les outils d'intelligence artificielle peuvent vous aider à retranscrire l'interview, la synthétiser et en extraire 
+des verbatims pour illuster des points d'attention.
+</p>
+<p> Que vous meniez l'analyse en live ou en différé sur base des enregistrements, il est intéressant de disposer d'une <b>grille d'observation</b> qui reprend,
+selon le besoin, les indicateurs suivants:
+<ul>
+<li>la liste des tâches liées au scénario à réaliser;</li>
+<li>sous chaque tâche, prévoir de l'espace pour décrire
+<ul> 
+<li>le <b>processus</b> parcouru par l'utilisateur pour réaliser chaque tâche (liste des écrans);</li>
+<li>le <b>temps</b> pour réaliser la tâche (important pour comparer 2 systèmes);</li>
+<li>les <b>réussites</b> et éléments qui ont provoqué de la satisfaction;</li>
+<li>les <b>échecs</b>, erreurs ou problèmes rencontrés; </li>
+<li>les <b>commentaires</b> de l'utilisateur; </li>
+<li>l'<b>état émotionnel</b> de l'utilisateur.</li>
+</ul>
+  </li>
+</ul>
+La grille d'observation proposée dans l'article 
+<a target="_blank" href="mener-une-observation-passive-avec-la-grille-d-observation-de-spradley.html">Mener une observation passive avec la grille d'observation de Spradley</a>
+peut être adaptée pour assurer l'observation d'un test utilisateur.
+</p>
+<p>Il est toujours intéressant de terminer l'expérience par un questionnaire de satisfaction comme décrit dans l'article 
+<a target="_blank" href="exploiter-les-echelles-d-evaluation-de-l-ux.html">Exploiter les échelles d'évaluation de l'UX</a>. 
+Notez que le questionnaire le plus court ne contient que 2 questions et qu'il est donc possible de trouver une échelle adaptée à toutes les situations.
+Les questionnaires plus long permettent de dégager des indicateurs chiffrés qui permettent de réaliser des graphiques explicites 
+pour présenter les axes d'amélioration importants.
+</p>
+<p> Pour varier la modalité de feedback, des questions ouvertes peuvent aussi être posées sous la forme de <b>phrase à compléter</b>, comme celles-ci:
+<ul>
+<li> "Je trouve ce système utile pour ..."</li>
+<li> "Le système serait plus facile à utiliser si ..."</li>
+<li> "Ma première impression en utilisant ce système est ..."</li>
+<li> "Si je pouvais changer quelque chose à ce système, je ..."</li>
+<li> "Mon système préféré est ... parce que ..."</li>
+<li> "Ce système serait surtout utile dans le contexte de ..."</li>
+<li> "Les principaux défauts de ce système sont ..." </li>
+<li> "Je n'ai jamais utilisé ce système parce que ..."</li>
+<li> "Je trouve que l'expérience de ce système est ..."</li>
+<li> "Pour moi, le système idéal serait ..."</li>
+<li> "Ce qui me frustre le plus avec ce système, c'est ..."</li>
+</ul>
+</p>
+<p> Si le projet doit induire des changemements majeurs, les <b>verbatims</b> utilisateur seront <b>précieux</b> pour les motiver. Veillez donc à les collecter, 
+soit en enregistrant au minimim l'audio, soit en proposant des questions ouvertes sous forme de phrases à compléter lors de l'entretien de suivi du test.
+</p>
+<h4 id="utilisateurs"><a class="header" href="#utilisateurs"> Etape 4 : Recruter les utilisateurs</a></h4>
+<p>
+Le recrutement des participants est un élément clé de la réussite d'un test utilisateur. 
+Ils ne doivent pas être nombreux (<b>5 à 8 selon les groupes cibles</b>), mais ils doivent être sélectionner pour être <b>représentatifs de l'ensemble des usages</b>.
+Et le test repose sur des <b>rencontres individuelles</b> pour éviter les jeux d'influence induits pas la dynamique d'un groupe.
+</p>
+<p>
+Le chiffre de 5 utilisateurs a longtemps été promu comme idéal pour maximiser le rapport bénéfice/coût du test utilisateur, suite à une 
+<a href="" target="_blank">étude de Jacob Nielsen parue 1993</a>. Via une analyse transversale sur une dizaine de projets, Jakob Nielsen a estimé qu’un test mené 
+avec 5 utilisateurs permettait d’identifier environ 85 % des principaux problèmes d’utilisabilité d’une interface.
+Mais <a href="" tager="_blank">d'autres auteurs</a> ont montré plus récemment que le nombre idéal pouvait dépendre de la complexité du système et qu'il fallait
+parfois aller au delà du chiffre de 5 utilisateurs pour atteindre une proportion de problèmes identifiés de 85%. Les praticiens conseillent de <b>commencer par 5
+utilisateurs et d'aviser ensuite</b>. Mais si les tests ne soutiennent pas une démarche de recherche, on ne devrait jamais dépasser 10 utilisateurs testeurs.
+</p>
+<p>
+Pour recruter des utilisateurs représentatifs, les <b>principes</b> suivants sont à prendre en compte :
+<ul>
+<li> les développeurs, les décideurs et les chefs de projet en sont pas des utilisateurs pressentis pour un test utilisateur; 
+le test doit cibler des <b>utilisateurs réels</b>;</li>
+<li> les <b>personas</b> et les <b>profils d’usage</b> identifiés lors de la phase de recherche doivent guider la sélection des utilisateurs; </li>
+<li> les utilisateurs sélectionnés doivent être <b>représentatifs des comportements, besoins et contextes d’utilisation</b> visés, davantage que d’une représentativité
+statistique de la population;</li>
+<li> il est aussi recommandé de veiller à une <b>diversité de profils</b> (âge, genre, niveau de maîtrise technologique ou 
+situations d’accessibilité);
+<li> selon les objectifs du test, il peut être pertinent intégrer des personnes qui n'utilisent pas ce type de système d'habitude. </li>
+</ul>
+</p>
+<p> S'il n'est pas évident de recruter des utilisateurs, des <b>récompenses</b> peuvent être envisagées (comme pour les interviews), par exemple sous la forme de bons cadeau.</p>
+<h4 id="animation"><a class="header" href="#animation"> Etape 5 : Animer un test utilisateur </a></h4>
+<p>
+Tout comme pour <a target="_blank" href="mener-des-interviews-pour-explorer-en-profondeur-les-pratiques.html"> Mener des interviews pour exporer en profondeur 
+les pratiques </a>, l'animation d'un test utilisateur exige un temps d'accueil.
+</p>
+<p>
+Plus précisément, l'animation du test se déroule comme suit:
+<ul>
+<li> accueil du participant : 
+    <ul><li>prise de contact,</li>
+        <li>proposition d'une boisson,</li>
+        <li>présentation de l'objectif du test,</li>
+        <li>présentation du déroulement de la session,</li> 
+        <li>formulaire de consentement précisant comment les données seront exploitées; </li>
+    </ul></li>
+<li> présentation du système : toujours présenter le système comme un <b>prototype à améliorer</b> ou comme une <b>solution à évaluer</b> pour que le participant
+ se sentent libre d'exprimer son avis; </li>
+<li> passation du scénario : 
+    <ul><li>présenter le scénario, y intégrer des éléments de personnalisation pour l'utilisateur si c'est possible;</li>
+    <li>demander à l'utilisateur de <b>verbaliser ce qu'il pense</b>, d'exprimer ses difficultés;</li>
+    <li>rester neutre et bienveillant;</li>
+    </ul> </li>
+<li> discussion post-test : 
+    <ul><li>écouter avec empathie,</li>
+        <li>remercier le participant,</li>
+        <li>remettre la récompense si c'est prévu.</li></ul>
+         </li>
+</ul>
+</p>
+<p>
+S'il y a un enjeu de suivi important, l'idéal est de pouvoir animer le test à 2 pour qu'une personne se concentre sur la passation et l'autre sur la prise de notes.
+Mais les enregistrements peuvent vous permettre d'animer le test seul.e et de faire l'analyse à postériori. Il peut être pertinent d'inviter un développeur, un chef de projet
+ou un décideur à participer de manière passive à un test utilisateur pour qu'il soit conscient de la réalité d'utilisation.
+</p>
+<h4 id="rapport"><a class="header" href="#rapport"> Etape 6 : Rédiger un rapport de compte-rendu d'un test utilisateur </a></h4>
+<p>
+Le rapport d'un test utilisateur doit reprendre les éléments suivants :
+<ul>
+<li>un résumé pour les décideurs;</li>
+<li>une description du contexte de l'étude : but, scénarios, utilisateurs recrutés, profils des utilisateurs;</li>
+<li>les résultats des tests, basés sur les indicateurs observés :  
+    <ul><li>taux d'échec/de réussite des scénarios, </li>
+    <li>problèmes rencontrés, fréquence et sévérité (selon le caractère bloquant ou évitable), illustrés avec des captures d'écran pour les plus importants;</li>
+    <li>temps moyen pour réaliser chaque scénario;</li>
+    <li>des verbatims les plus parlants;</li>
+    </ul>
+<li>les résultats du questionnaire post-test (échelles UX, émotions, suggestions des utisateurs, ...).</li>
+</ul>
+</p>
+<p> Les axes de travail peuvent être présentés au travers d'une matrice de décision à 4 quadrants structurée sur base d'un axe lié à la valeur ajoutée et d'un axe lié au coût.
+ <img src="images/matrice-de-decision-cc-by-sa.png" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+</p>
+<h4 id="histoire"><a class="header" href="#histoire"> La petite histoire </a></h4>
+<p>
+Le test utilisateur en UX trouve ses origines dans les travaux en ergonomie et en psychologie cognitive menés dès les années 1940-1950, 
+notamment dans les domaines de l’aéronautique et de l’ingénierie. Des chercheurs comme John E. Karlin et Alphonse Chapanis ont montré 
+l’importance d’observer les utilisateurs réels pour concevoir des systèmes plus efficaces et plus sûrs. 
+Dans les années 1980, l’approche est popularisée dans l’informatique grâce à Don Norman et Jakob Nielsen, qui défendent le design centré sur 
+l’utilisateur et les tests d’utilisabilité. Aujourd’hui, le test utilisateur est devenu une pratique centrale de l’UX design dans 
+le développement de sites web, d’applications et de services numériques.
+</p>
+<h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> 
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="evaluer-l-ux-a-l-aide-de-grilles-d-evaluation-expertes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="exploiter-les-echelles-d-evaluation-de-l-ux.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="evaluer-l-ux-a-l-aide-de-grilles-d-evaluation-expertes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="exploiter-les-echelles-d-evaluation-de-l-ux.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
