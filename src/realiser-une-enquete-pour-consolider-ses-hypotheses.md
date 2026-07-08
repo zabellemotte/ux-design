@@ -1,16 +1,229 @@
 # Réaliser une enquête pour consolider ses hypothèses
 
-<p>Prochainement ...</p>
 
 
-<p> Un résumé à rédiger plus tard sur base du chapitre 7 du bouquin (p178) et du support de cours sur la recherche quantitative (slides 9-11,20-21,25,29-30,51-54). </p>
-Les idées importantes :
+<h4 id="survol">En un coup d'oeil </h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>2. Exploration</dd>
+            <dt>Catégorie</dt>
+            <dd>UX design</dd>
+            <dt>Intérêt</dt>
+            <dd>Consolider ses hypothèses et les prioriser en touchant un échantillon d'utilisateurs plus large</dd>
+            <dt>Complexité</dt>
+            <dd>Moyenne</dd>
+            <dt>Durée</dt>
+            <dd>1 à 2 jours pour composer l'enquête, la tester, l'adapter et analyser ses résultats</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=qF2ee19n5Iw" target="_blank">Les principes de la sagesse de foules (Hypermind)</a></dd>
+        </dl>
+    </div>
+  </div>
 <ul>
-<li> la sagesse des foules et le théorème de la diversité : <a href="https://www.youtube.com/watch?v=qF2ee19n5Iw" target="_blank">  https://www.youtube.com/watch?v=qF2ee19n5Iw </a>
-<li> le recrutement des participants : veiller à la représentativité et penser à atteindre les non-utilisateurs </li>
-<li> la structure de l'enquête (intro avec infos sur collecte et traitement de données, profil, questions, remerciements)</li>
-<li> les types de questions et leur traitement (parler du net promoter score qui est très à la mode mais pas forcément idéal => à creuser dans la littérature avec Elicit) </li>
-<li> le nombre de questions et la durée (pré-tester le formulaire pour conna^tre la durée et l'annoncer) </li>
-<li> les biais et l'importance de la neutralité </li>
-<li> les questionnaires courts en mode guérilla </li>
+<li> <a href="#resume"> En résumé </a></li>
+<li> <a href="#foules"> La sagesse des foules ou les conditions pour réussir une enquête </a> </li>
+<li> <a href="#question"> Cadrer sa question de recherche </a> </li>
+<li> <a href="#modalite"> Choisir une modalité d'enquête </a> </li>
+<li> <a href="#anatomie"> Cerner l'anatomie d'une enquête </a> </li>
+<li> <a href="#types"> Choisir les types de questions </a> </li>
+<li> <a href="#netps"> Etre conscient du peu d'intérêt du net promoter score </a> </li>
+<li> <a href="#biais"> Eviter les biais de formulation et de passation</a> </li>
+<li> <a href="#conseils"> 8 conseils pour rédiger une enquête</a> </li>
+<li> <a href="#participants"> Recruter les participants </a> </li>
+<li> <a href="#histoire">La petite histoire</a> </li>
+</ul>
+
+<h4 id="resume"> En résumé </h4>
+<p> Les enquêtes constituent une <b>méthode quantitative</b> qui mérite d'être exploitée lorsqu'on a une idée des pistes à explorer
+pour répondre à une question UX. Cette approche exige de bien <b>cerner la question de recherche</b>, d'être en mesure de 
+définir une série d'hypothèses à tester,
+et de <b>questionner ces hypothèses de manière neutre</b>. Les participants à une enquête doivent constituer un <b>pannel représentatif</b>
+ du public
+du service ciblé, en veillant à penser aux non utilisateurs si c'est pertinent. </p>
+
+<h4 id="foules"> La sagesse des foules ou les conditions pour réussir une enquête </h4>
+<p> La <b>sagesse des foules</b> désigne un important résultat de recherche qui a montré qu'un grand nombre de personnes, 
+lorsqu'elles donnent leur avis de manière indépendante, peuvent collectivement produire une réponse plus juste qu'un expert isolé.</p>
+
+<p> L'idée originale est d'abord liés à une expérience menée par Francis Galton Galton, l'un des pionniers de la statistique moderne. 
+En 1906, il observe lors d'une foire qu'en faisant la moyenne des estimations de plusieurs centaines de personnes sur le poids d'un bœuf,
+on obtient un résultat presque exact. <p>
+
+</p>James Surowiecki, journaliste et essayiste américain, popularise le concept avec son livre The Wisdom of Crowds. 
+Il montre que <b>l'intelligence collective fonctionne particulièrement bien lorsque les opinions sont diverses, indépendantes 
+et correctement agrégées</b>.</p>
+
+<h4 id="question"> Cadrer sa question de recherche </h4>
+<p> Les enquêtes font partie du pannel de méthodes quantitatives (avec les tris de cartes et analytics) qui visent 
+à mieux comprendre qui est l'utilisateur, quels sont ses besoins, et quels sont ses problèmes. 
+Les approches qualitatives comme l'interview, visent plutôt à comprendre le comportement 
+et les émotions d'un utilisateur.  </p>
+
+<p> Les questions d'une enquête UX visent en général à répondre à 4 grandes questions:
 <ul>
+<li> <b>Questions de comportement</b>: que font-ils ?  </li>
+<li> <b>Questions d'opinion</b>: que pensent-ils ? </li>
+<li> <b>Questions de connaissances</b>: que savent-ils ? </li>
+<li> <b>Questions démographiques et factuelles</b>: qui sont-ils ? </li>
+</ul>
+</p>
+
+
+<h4 id="modalite"> Choisir une modalité d'enquête </h4>
+<p> Les enquêtes peuvent être menées sous diverses modalités qui peuvent être mixées pour garantir la diversité des répondants :
+<ul>
+<li><b> papier</b>: plus lourd au niveau logistique mais permet d'impliquer des personnes moins à l'aise avec les technologies;</li>
+<li><b> électronique</b>: simple à analyser, diffusé facilement à un grand nombre de participants, mais nécessite un <b>pré-test rigoureux </b>
+car les répondants ne peuvent pas demander d'informations complémentaires, et ne permet pas de toucher les personnes moins à l'aise avec
+la numérique; leur version guérilla se décline sous une forme très courte qui peut récolter plus de répondants soit via envoi par mail , soit via 
+une intégration à une site web; il faut dans ce cas éviter le caractère viral de l'enquête pour limiter le risque de réponse au hasard;
+</li>
+<li><b> téléphone</b>: permet de cibler une population spécifique et d'expliquer les questions si nécessaire mais prends du temps et convient
+mal aux questions d'échelle ou aux questions sensibles; </li>
+<li><b> face à face</b>: très lourd, pas adapté aux questions sensibles et plus sujet aux biais de désirabilité sociale; 
+convient bien pour les populations moins à l'aise avec les technologies;  peuvent être dérivés <b>en mode guérilla</b> pour privilégier 
+ la rapidité et la légèreté, tout en conservant une sélection d’utilisateurs pertinente pour les usages étudiés, 
+ sans viser la représentativité statistique de la population globale.</li>
+</ul>
+ </p>
+
+<h4 id="anatomie"> Cerner l'anatomie d'une enquête </h4>
+<p> Une enquête est en général structurée en 4 parties:
+<ul>
+<li><b>Introduction et consignes</b>: présentation de l'étude, du commanditaire, du contexte et du but;  intormations sur le traitement 
+et garantie d'anonymat (RGPD);  indication du nombre de questions et de la durée pour remplir l'enquête;</li>
+<li><b>Corps du questionnaire</b>: commencer par les questions engageantes, aller des questions génériques aux questions spécifiques et amener les questions
+sensibles sous forme indirecte après quelques questions plus générales;</li>
+<li><b>Profil</b>:  ces questions  ciblent les éléments socio-démographiques 
+(âge, sexe, niveau d'étude, profession, ...); il peut être pertinent de s'inspirer des données statistiques Stabel pour avoir une idée préalable 
+profils sur certaines questions spécifiques;</li>
+<li><b>Remerciement et coordonnées de contact</b></li>
+</ul>
+</p>
+
+<p> Quelques chiffres sur la longueur d'un questionnaire:
+<ul>
+<li>Plus un questionnaire est long, moins les participants consacrent de temps à chaque question 
+(40s par question pour un questionnaire de 2 items, contre 19s pour un questionnaire de 26 à 30 items);</li>
+<li> au-delà de 8 minutes, le taux d'abandon passe de 5 à 20%;</li>
+<li> il est déconseillé de composer une enquête qui prend plus de 15 minutes pour répondre;</lI>
+<li>sur smartphone, compléter un questionnaire en ligne prend plus de temps.</li>
+</ul>
+Chaque question supplémentaire réduit le taux de réponses et laur validité. 
+Il est parfois préférable de réaliser plusieurs questionnaires courts plutôt qu'une seul questionnaire long.
+</p>
+
+<h4 id="types"> Choisir les types de questions </h4>
+<p> Les <b>questions ouvertes</b> permettent au répondant de s'exprimer librement.  
+Elles peuvent prendre la forme de complétion de phrase pour cadrer sur un point et simplifier l'analyse.
+ </p>
+ Les questions peuvent exiger de se positionner sur une <b>échelle unidimensionnelle</b> (comme un taux d'accord)
+ <b>ou bipolaire</b> (entre innovant et dépassé par exemple).
+ <p>
+<p> Les <b>questions à choix multiples </b>peuvent aussi intégrer une enquête avec possibilité de une ou plusieurs réponses.
+Il faut dans ce cas avoir une bonne idée des options courantes de réponses (obtenues par exemple au travers d'interviews) et éventuellement
+prévoir une option "Autre, à préciser".
+</p>
+
+<p>La <b>veille dans la littérature</b> permet de trouver des questions sur 
+différents aspects avec une forme validée. J'épingle notamment 
+le fait que <a href="https://www.guillaumegronier.com/questionnaires-ux/" target="_blank">Guillaume Gronier nous promet de lister les références liées à la formulation 
+des questions de profil prochainement</a>.</p>
+
+
+<h4 id="netps"> Etre conscient des limites du net promoter score </h4>
+<p> Le <b>net promoter score</b> est un indicateur calculé sur base du taux d'accord avec la question<br/>
+<b> "Dans quelle mesure recommenderiez-vous ce service ?"</b>.<br/>
+Le taux d'accord est mesuré sur une échelle de 1 à 10 et le net promoter score est calculé comme suit:<br>
+(pourcentage de clients avec un taux d'accord de 9 ou 10) - (pourcentage de client avec un taux d'accord de 6 ou moins).<br>
+Le premier groupe est aussi désigné "les promoteurs" et le second "les détracteurs", alors que les personnes qui répondent 
+avec un taux d'accord  de 6 ou 7 représentent "les passifs" qui n'entrent pas en compte dans le calcul.</p>
+<p>
+L'intérêt de ce score réside dans sa simplicité et dans la possiblité de comparaison avec des acteurs concurrents.
+Mais sur le plan scientifique, les recherches ne montrent aucun lien entre l'évolution de cet indicateur et l'évolution du chiffre d'affaire, et les
+études statistiques montrent son <b>peu de fiabilité</b> puisqu'il souffre d'une grande variabilité et d'un biais de genre avéré. Ces biais se cumulent 
+parfois avec un biais de couleur, lorsque les items sont regoupés en 3 couleurs (vert, orange et rouge) qui influence l'interprétation de
+l'échelle initiale.
+</p>
+
+<h4 id="biais"> Eviter les biais de formulation et de passation</h4>
+<p> Lors de la formulation des questions, les hypothèses testées doivent être évaluées au travers de <b>questions formulées de manière neutre</b> qui
+laissent la même place à l'hypothèse et à sa négation. En particulier, les biais suivants seront évités:
+<ul>
+<li> biais de confirmation, de question suggestives ou culturel : liés à des questions qui ne sont pas neutres, mais porteuses d'une préconception
+explicite qui est suggérée ou à une préconception culturelle limitante qui est implicite;
+<li>tendence à l'acquiescement: il est plus facile de répondre "oui" que de répondre "non"; 
+      il vaut mieux alors présenter la question sous la forme d'un choix entre 2 options;</li>
+<li>effet de primauté et de récence : l'ordre des options a un influence sur les choix, les premières sont souvent privilégiées (effet de primauté)
+tout comme les dernières (effet de récence);</li>
+<li>effet de halo: bien souvent, les premières réponses influencent les réponses suivantes, en particulier lorsque plusieurs questions avec
+réponses à échelle se suivent; prévoir des items inversés dans ce cas;</li>
+<li>tendence à la triche: les participants cochent parfois des réponses aléatoires pour gagner du temps; pour pouvoir éliminer ces réponses, 
+prévoir des items inversés, et des questions d'attention ("Cochez l'option 5" ou "Répondez un mot donnéé);
+</ul>
+ </p>
+
+<p>L'organisation pratique de la passation mérite aussi une attention particulière par rapport aux risques liés aux biais suivants
+<ul>
+<li>biais de conception et de sélection : privilégier une enquête en ligne exclus par exemple les utilisateurs qui utilisent pas ou peu internet;</li>
+<li>biais procédural : difficile de collecter des données sensible en face à face ou au téléphone;</li>
+<li>biais de désirabilité sociale : les participants ont tendance à répondre aux questions de manière à se montrer à leur avantage; particulièrement
+      dans les enquêtes en face à face ou par téléphone.</li>
+
+</ul>
+</p>
+<h4 id="conseils"> 8 conseils pour rédiger une enquête </h4>
+<p> La rédaction de cet article m'a inspiré un peu de veille sur les conseils pour rédiger un questionnaire d'enquête. Voici le résumé 
+des conseils pour rédiger une enquête réalisé avec Elicit.  </p>
+
+<div style="background-color:#DAFBDC;border-radius:10px;padding:5px">
+<ol>
+<li><b>Situer tout de suite l’objectif, le cadre et la promesse de valeur.</b> <br/> 
+L’introduction doit dire pourquoi l’enquête existe, qui la porte, et ce que l’on attend du répondant; elle doit le faire vite, sans préambule interminable [1,2]. Une bonne ouverture n’est pas un bloc juridique: elle sert à installer la confiance et à montrer que les réponses auront une utilité réelle [1,2].
+</li>
+<li> <b> Réduire la charge du répondant au strict nécessaire.</b><br/>
+ La longueur doit rester courte, la navigation simple, et la présentation lisible; sinon la qualité des réponses se dégrade avant la fin [2,3,7]. La littérature insiste explicitement sur la nécessité d’équilibrer le niveau d’information recherché et la fatigue induite chez le répondant [7].
+</li>
+<li><b> Écrire des questions qui ne demandent qu’une seule chose à la fois. </b><br/>
+ Les bons items sont courts, univoques, et exempts de double négation, de jargon, de formulation orientée, ou de plusieurs idées entremêlées [3,4]. Fowler résume la logique cognitive: il faut d’abord comprendre la question, puis récupérer l’information, la mettre en forme, et seulement ensuite répondre [4].
+</li>
+<li><b>Aller du général vers le spécifique. </b><br/>
+L’ordre des questions compte: les séquences logiques et structurées donnent de meilleures réponses, avec les questions générales avant les questions plus précises [1,2]. Les sujets plus sensibles ou plus intrusifs sont mieux placés vers la fin, quand le répondant a déjà compris le sujet et le rythme du questionnaire [1,2].
+</li>
+<li><b> Garder les questions de profilage utiles à l’analyse. </b><br/>
+Les variables de contexte ou de profil, comme l’âge, le genre, le poste, le lieu de travail ou l’ancienneté, peuvent être pertinentes, mais seulement si elles servent vraiment la segmentation ou l’interprétation [1]. En pratique, il vaut mieux les placer après les questions de fond, et ne garder que celles qui éclairent une décision analytique [1].
+</li>
+<li><b>Construire des modalités de réponse cohérentes.</b><br/>
+ Les options doivent être exhaustives, mutuellement exclusives, et adaptées au type de question [1]. Un item fermé doit couvrir toutes les réponses plausibles sans chevauchement; sinon les données deviennent difficiles à interpréter ou biaisées dès la saisie [1,3].
+</li>
+<li><b> Adapter la passation au format en ligne.</b><br/>
+ Les questionnaires électroniques ont un avantage net lorsqu’ils utilisent des sauts logiques et, si besoin, des éléments visuels pour fluidifier l’expérience [7]. En contrepartie, les consignes doivent être extrêmement claires, parce que le formulaire doit se comprendre sans médiation humaine [7].
+</li>
+<li><b>Prétester, relire, piloter, puis corriger. </b></br>
+Une enquête ne devrait pas être diffusée sans passage par la validation experte et le pilotage; les méthodes recommandées vont du focus group à l’entretien cognitif (le répondant pense à voix haute et décrit ce qu'il comprend des questons), en passant par la relecture experte, le behavior coding  (obsever l'attitude de l'utlisateur en répondant, ses hésitations) et le petit pilote (test à petite échelle) [9]. C’est ce travail qui révèle les ambiguïtés, les questions trop coûteuses, et les choix de formulation qui semblent évidents au concepteur mais pas au répondant [9].
+</li>
+</ol>
+
+Références<br/>
+[1] McColl E, Jacoby A, Thomas L, Soutter J, Bamford C, Steen N, Thomas R, Harvey E, Garratt A, Bond J. Design and use of questionnaires: a review of best practice applicable to surveys of health service staff and patients. 2001.<br/>
+[2] Yaddanapudi S, Yaddanapudi L. How to design a questionnaire. 2019.<br/>
+[3] Bee DT, Murdoch-Eaton D. Questionnaire design: the good, the bad and the pitfalls. 2016.<br/>
+[4] Fowler FJ, Cosenza C. Writing Effective Questions. 2008.<br/>
+[5] Hansen MA, Tsheko GN. A Primer on Survey Research. 2021.<br/>
+[6] Mello M, Merchant R, Clark M. Surveying emergency medicine. 2013.<br/>
+[7] Peytcheva E, Yan T. A Practical Guide to Survey Questionnaire Design and Evaluation. 2025.<br/>
+[8] Salant P, Dillman DA. How to conduct your own survey. 1994.<br/>
+[9] Peytcheva E, Yan T. A Practical Guide to Survey Questionnaire Design and Evaluation. 2025.<br/>
+[10] Hansen MA, Tsheko GN. A Primer on Survey Research. 2021.<br/>
+[11] Draugalis JR, Coons SJ, Plaza CM. Best Practices for Survey Research Reports: A Synopsis for Authors and Reviewers. 2008.
+</div>
+
+<h4 id="question"> Recruter les participants </h4>
+<p> Comme pour toutes les méthodes UX et comme la sagesse des foules le justifie, il est essentiel de mobiliser un <b>pannel représentatif de 
+personnes</b> pour répondre à une enquête.  Il est toujours important de questionner l'intérêt de prendre en compte l'<b>avis des non utilisateurs 
+ou des personnes qui sont moins à l'aide avec les technologies</b>. </p>

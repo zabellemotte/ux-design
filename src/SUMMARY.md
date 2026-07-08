@@ -27,7 +27,7 @@
     - [Synthétiser l'expérience utilisateur avec les personas et les cartes d'expérience chronologiques](./synthetiser-l-experience-utilisateur-avec-les-personas-et-les-cartes-d-experience-chronologiques.md)
     - [Générer des idées avec le brainstorming](./generer-des-idees-avec-le-brainstorming.md)
     - [Générer des idées avec le design studio](./generer-des-idees-avec-le-design-studio.md)
-    - [Analyser les besoins avec la méthode ERRC](./analyser-les-besoins-avec-la-methode-errc.md)
+    - [Envisager l'évolution d'un système avec la méthode ERRC](./envisager-l-evolution-d-un-systeme-avec-la-methode-errc.md)
     - [Prioriser les besoins avec la méthode MoSCoW](./prioriser-les-besoins-avec-la-methode-moscow.md)
     - [Prioriser les préférences avec le vote pondéré](./prioriser-les-preferences-avec-le-vote-pondere.md) 
 - [4. Génération](./4-generation.md)

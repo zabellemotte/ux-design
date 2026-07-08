@@ -38,7 +38,9 @@ Cet article dresse un résumé de la référence suivante décrivant <b>le poten
 <p style="margin:0 10px 0 20px;"><cite>Heylighen, A., & Dong, A. (2019). To empathise or not to empathise? 
 Empathy and its limits in design. Design Studies, 65, 107–124. 
 <a href="https://doi.org/10.1016/j.destud.2019.10.007" target="_blank">https://doi.org/10.1016/j.destud.2019.10.007</a></cite></p>
-
+<p>
+Ce résumé a été composé avec l'aide de Notebook LM.
+</p>
 
 
 <div class="introduction">

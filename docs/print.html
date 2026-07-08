@@ -1545,6 +1545,9 @@ Cet article dresse un résumé de la référence suivante décrivant <b>le poten
 <p style="margin:0 10px 0 20px;"><cite>Heylighen, A., & Dong, A. (2019). To empathise or not to empathise? 
 Empathy and its limits in design. Design Studies, 65, 107–124. 
 <a href="https://doi.org/10.1016/j.destud.2019.10.007" target="_blank">https://doi.org/10.1016/j.destud.2019.10.007</a></cite></p>
+<p>
+Ce résumé a été composé avec l'aide de Notebook LM.
+</p>
 <div class="introduction">
     <p>Depuis les années 1980, l'<b>empathie</b> est présentée comme une valeur essentielle du design. 
     L'article interroge cette vision idéalisée en explorant ses <b>limites théoriques et pratiques</b>, 
@@ -1837,32 +1840,83 @@ toujours prévoir de débuter un focus group par une réflexion individuelle pou
     </div>
   </div>
 <ul>
+<li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#resume"> En résumé</a></li>
 <li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#fond"> Les fondements des analytics</a></li>
-<li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#ref">Un référentiel pour exploiter les analytics</a> </li>
+<li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#ref">Des référentiels pour exploiter les analytics</a> </li>
 <li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#plan">Le plan de tracking</a> </li>
-<li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#hypab">Les hypothèses et l'AB Testing</a> </li>
+<li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#hypab">Les hypothèses et l'A/B Testing</a> </li>
 <li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#legal">Les enjeux juridiques</a> </li>
 <li> <a href="exploiter-les-analytics-pour-etudier-les-usages-et-leur-evolution.html#outils">Les outils et l'IA</a> </li>
 </ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé </a></h4>
 <h4 id="fond"><a class="header" href="#fond"> Les fondements des analytics </a></h4>
 <p>
-définition, famille de questions et motivations
+Les <b>analytics</b> mesurent ce que les gens font réellement avec un produit pour identifier les frictions et opportunités.
 </p>
-<h4 id="ref"><a class="header" href="#ref"> Un référentiel pour exploiter les analytics </a></h4>
 <p>
-framework goal-signal-metric de Google</br>
-aussi les indicateurs Heart de Google (pas dans le cours)</br>
-+ les 5 phases</br>
+Les analytics permettent de répondre à 3 familles de questions:
+<ul>
+<li><b> comprendre les usages</b>: les fonctionnalités les plus utilisées, par qui, à quelle fréquence, le parcours type;</li>
+<li><b> trouver les frictions</b>: causes d'abandon, erreurs fréquentes;</li>
+<li><b> mesurer l'impact</b>: l'évolution des chiffres permet de voir si les changements ont un aimact sur la conversion.</li>
+</ul>
+</p>
+<p>
+Les bonnes raisons d'utiliser les analytics:
+<ul>
+<li> les chiffres aident à convaincre; </li>
+<li> l'analyse est rapide; </li>
+<li> l'analyse permet de définir des priorités;</li>
+<li> l'évolution des chiffres permet d'objectiver le retour sur investissement.</li>
+</ul>
+</p>
+<h4 id="ref"><a class="header" href="#ref"> Des référentiels pour exploiter les analytics </a></h4>
+<p>
+L'exploitation des analytics pour améliorer l'UX repose sur 5 étapes :
+<ul>
+<li><b>Mesure</b> : Que se passe t'il ?</li>
+<li><b>Insight</b>: Ou est la friction ?</li>
+<li><b>Hypothèse</b>: Pourquoi cela se produit ? </li>
+<li><b>Test</b>: Que change t'on ?</li>
+<li><b>Décision</b>: Que garde t'on ?</li>
+</ul>
+</p>
+<p>
+Google propose aussi un réfrentiel pour exploiter les analytics pour améliorer l'UX : 
+<a href="https://www.heartframework.com/" target="_blank">le framework HEART</a>.
+Ce framework propose de retenir une ou plusieurs dimension à étudier parmi les 5 dimensions Happiness,
+Engagement, Adoption, Retention, Task success. Puis de décliner l'analyse en 3 étapes:
+<ul>
+<li><b>Goals</b>:  Qu'est ce qu'on veut garantir dans l'expérience utilisateur ?</li>
+<li><b>Signals</b>: Quel comportement observable prouve que cet objectif est atteint ? </li>
+<li><b>Metrics</b>: Comment quantifier ce comportement de manière fiable au travers d'une métrique ?</li>
 </p>
 <h4 id="plan"><a class="header" href="#plan"> Le plan de tracking</a></h4>
 <p>
-étape, event, trigger, propriété, métrique
+Ce document rassemble toutes les informations sur les actions étudiées:
+<ul>
+<li><b>étape</b>:  étape du parcours utilisateur;</li>
+<li><b>événement</b>: action ciblée décrite au travers d'une nomenclature détaillée;</li>
+<li><b>déclencheur</b>: clic, survol, vue, ...</li>
+<li><b>propriété</b>: informations contextuelles;</li>
+<li><b>métrique</b>: élément de mesure qui permet de qualifier la réusite de l'action. <b><<< choix critique !</b></li>
 </p>
-<h4 id="hypab"><a class="header" href="#hypab"> Les hypothèses et l'AB Testing</a></h4>
 <p>
-formulation hypothèse <br/>
+Il faut veiller à <b>segmenter les résultats </b>pour l'analyse, par device, par source, par type d'utilisateur (nouveau, habitué), 
+par page ou catégorie, par pays, langue, marché, ... 
+</p>
+<h4 id="hypab"><a class="header" href="#hypab"> Les hypothèses et l'A/B Testing</a></h4>
+<p>
+Sur base des résultats du plan de tracking, des hypothèses sont émises sous cette forme:</br/>
+<b> Nous pensons que [changement] pour [segment] améliorera [métrique] parce que [raison].</b>
+<p>
+<p> 
+L'<b>A/B testing</b> vise à comparer l'efficacité de deux variantes d'un élément d'interface.
+La moitié des utlilisateurs testent le produit avec vers la version A et l'autre moitiè avec la version B et les métriques d'engagment sont comparées.
+La réussite ICI IL FAUT DES EXEMPLES
+<p>formulation hypothèse <br/>
 définition AB Test (pas dans le bouquin)</br>
-évaluation impact (calculateur à tester et à approfondir)
+évaluation impact (calculateur à tester et à approfondir)</p>
 </p>
 <h4 id="legal"><a class="header" href="#legal"> Les enjeux juridiques</a></h4>
 <p>
@@ -1877,18 +1931,211 @@ https://skillshop.withgoogle.com/<br/>
 https://www.youtube.com/@MeasureSchool<br/>
 https://www.simoahava.com/</p>
 <h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-21"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-21"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> <div style="break-before: page; page-break-before: always;"></div><h1 id="réaliser-une-enquête-pour-consolider-ses-hypothèses"><a class="header" href="#réaliser-une-enquête-pour-consolider-ses-hypothèses">Réaliser une enquête pour consolider ses hypothèses</a></h1>
-<p>Prochainement ...</p>
-<p> Un résumé à rédiger plus tard sur base du chapitre 7 du bouquin (p178) et du support de cours sur la recherche quantitative (slides 9-11,20-21,25,29-30,51-54). </p>
-Les idées importantes :
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>2. Exploration</dd>
+            <dt>Catégorie</dt>
+            <dd>UX design</dd>
+            <dt>Intérêt</dt>
+            <dd>Consolider ses hypothèses et les prioriser en touchant un échantillon d'utilisateurs plus large</dd>
+            <dt>Complexité</dt>
+            <dd>Moyenne</dd>
+            <dt>Durée</dt>
+            <dd>1 à 2 jours pour composer l'enquête, la tester, l'adapter et analyser ses résultats</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=qF2ee19n5Iw" target="_blank">Les principes de la sagesse de foules (Hypermind)</a></dd>
+        </dl>
+    </div>
+  </div>
 <ul>
-<li> la sagesse des foules et le théorème de la diversité : <a href="https://www.youtube.com/watch?v=qF2ee19n5Iw" target="_blank">  https://www.youtube.com/watch?v=qF2ee19n5Iw </a>
-<li> le recrutement des participants : veiller à la représentativité et penser à atteindre les non-utilisateurs </li>
-<li> la structure de l'enquête (intro avec infos sur collecte et traitement de données, profil, questions, remerciements)</li>
-<li> les types de questions et leur traitement (parler du net promoter score qui est très à la mode mais pas forcément idéal => à creuser dans la littérature avec Elicit) </li>
-<li> le nombre de questions et la durée (pré-tester le formulaire pour conna^tre la durée et l'annoncer) </li>
-<li> les biais et l'importance de la neutralité </li>
-<li> les questionnaires courts en mode guérilla </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#resume"> En résumé </a></li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#foules"> La sagesse des foules ou les conditions pour réussir une enquête </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#question"> Cadrer sa question de recherche </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#modalite"> Choisir une modalité d'enquête </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#anatomie"> Cerner l'anatomie d'une enquête </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#types"> Choisir les types de questions </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#netps"> Etre conscient du peu d'intérêt du net promoter score </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#biais"> Eviter les biais de formulation et de passation</a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#conseils"> 8 conseils pour rédiger une enquête</a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#participants"> Recruter les participants </a> </li>
+<li> <a href="realiser-une-enquete-pour-consolider-ses-hypotheses.html#histoire">La petite histoire</a> </li>
+</ul>
+<h4 id="resume"><a class="header" href="#resume"> En résumé </a></h4>
+<p> Les enquêtes constituent une <b>méthode quantitative</b> qui mérite d'être exploitée lorsqu'on a une idée des pistes à explorer
+pour répondre à une question UX. Cette approche exige de bien <b>cerner la question de recherche</b>, d'être en mesure de 
+définir une série d'hypothèses à tester,
+et de <b>questionner ces hypothèses de manière neutre</b>. Les participants à une enquête doivent constituer un <b>pannel représentatif</b>
+ du public
+du service ciblé, en veillant à penser aux non utilisateurs si c'est pertinent. </p>
+<h4 id="foules"><a class="header" href="#foules"> La sagesse des foules ou les conditions pour réussir une enquête </a></h4>
+<p> La <b>sagesse des foules</b> désigne un important résultat de recherche qui a montré qu'un grand nombre de personnes, 
+lorsqu'elles donnent leur avis de manière indépendante, peuvent collectivement produire une réponse plus juste qu'un expert isolé.</p>
+<p> L'idée originale est d'abord liés à une expérience menée par Francis Galton Galton, l'un des pionniers de la statistique moderne. 
+En 1906, il observe lors d'une foire qu'en faisant la moyenne des estimations de plusieurs centaines de personnes sur le poids d'un bœuf,
+on obtient un résultat presque exact. <p>
+</p>James Surowiecki, journaliste et essayiste américain, popularise le concept avec son livre The Wisdom of Crowds. 
+Il montre que <b>l'intelligence collective fonctionne particulièrement bien lorsque les opinions sont diverses, indépendantes 
+et correctement agrégées</b>.</p>
+<h4 id="question"><a class="header" href="#question"> Cadrer sa question de recherche </a></h4>
+<p> Les enquêtes font partie du pannel de méthodes quantitatives (avec les tris de cartes et analytics) qui visent 
+à mieux comprendre qui est l'utilisateur, quels sont ses besoins, et quels sont ses problèmes. 
+Les approches qualitatives comme l'interview, visent plutôt à comprendre le comportement 
+et les émotions d'un utilisateur.  </p>
+<p> Les questions d'une enquête UX visent en général à répondre à 4 grandes questions:
 <ul>
+<li> <b>Questions de comportement</b>: que font-ils ?  </li>
+<li> <b>Questions d'opinion</b>: que pensent-ils ? </li>
+<li> <b>Questions de connaissances</b>: que savent-ils ? </li>
+<li> <b>Questions démographiques et factuelles</b>: qui sont-ils ? </li>
+</ul>
+</p>
+<h4 id="modalite"><a class="header" href="#modalite"> Choisir une modalité d'enquête </a></h4>
+<p> Les enquêtes peuvent être menées sous diverses modalités qui peuvent être mixées pour garantir la diversité des répondants :
+<ul>
+<li><b> papier</b>: plus lourd au niveau logistique mais permet d'impliquer des personnes moins à l'aise avec les technologies;</li>
+<li><b> électronique</b>: simple à analyser, diffusé facilement à un grand nombre de participants, mais nécessite un <b>pré-test rigoureux </b>
+car les répondants ne peuvent pas demander d'informations complémentaires, et ne permet pas de toucher les personnes moins à l'aise avec
+la numérique; leur version guérilla se décline sous une forme très courte qui peut récolter plus de répondants soit via envoi par mail , soit via 
+une intégration à une site web; il faut dans ce cas éviter le caractère viral de l'enquête pour limiter le risque de réponse au hasard;
+</li>
+<li><b> téléphone</b>: permet de cibler une population spécifique et d'expliquer les questions si nécessaire mais prends du temps et convient
+mal aux questions d'échelle ou aux questions sensibles; </li>
+<li><b> face à face</b>: très lourd, pas adapté aux questions sensibles et plus sujet aux biais de désirabilité sociale; 
+convient bien pour les populations moins à l'aise avec les technologies;  peuvent être dérivés <b>en mode guérilla</b> pour privilégier 
+ la rapidité et la légèreté, tout en conservant une sélection d’utilisateurs pertinente pour les usages étudiés, 
+ sans viser la représentativité statistique de la population globale.</li>
+</ul>
+ </p>
+<h4 id="anatomie"><a class="header" href="#anatomie"> Cerner l'anatomie d'une enquête </a></h4>
+<p> Une enquête est en général structurée en 4 parties:
+<ul>
+<li><b>Introduction et consignes</b>: présentation de l'étude, du commanditaire, du contexte et du but;  intormations sur le traitement 
+et garantie d'anonymat (RGPD);  indication du nombre de questions et de la durée pour remplir l'enquête;</li>
+<li><b>Corps du questionnaire</b>: commencer par les questions engageantes, aller des questions génériques aux questions spécifiques et amener les questions
+sensibles sous forme indirecte après quelques questions plus générales;</li>
+<li><b>Profil</b>:  ces questions  ciblent les éléments socio-démographiques 
+(âge, sexe, niveau d'étude, profession, ...); il peut être pertinent de s'inspirer des données statistiques Stabel pour avoir une idée préalable 
+profils sur certaines questions spécifiques;</li>
+<li><b>Remerciement et coordonnées de contact</b></li>
+</ul>
+</p>
+<p> Quelques chiffres sur la longueur d'un questionnaire:
+<ul>
+<li>Plus un questionnaire est long, moins les participants consacrent de temps à chaque question 
+(40s par question pour un questionnaire de 2 items, contre 19s pour un questionnaire de 26 à 30 items);</li>
+<li> au-delà de 8 minutes, le taux d'abandon passe de 5 à 20%;</li>
+<li> il est déconseillé de composer une enquête qui prend plus de 15 minutes pour répondre;</lI>
+<li>sur smartphone, compléter un questionnaire en ligne prend plus de temps.</li>
+</ul>
+Chaque question supplémentaire réduit le taux de réponses et laur validité. 
+Il est parfois préférable de réaliser plusieurs questionnaires courts plutôt qu'une seul questionnaire long.
+</p>
+<h4 id="types"><a class="header" href="#types"> Choisir les types de questions </a></h4>
+<p> Les <b>questions ouvertes</b> permettent au répondant de s'exprimer librement.  
+Elles peuvent prendre la forme de complétion de phrase pour cadrer sur un point et simplifier l'analyse.
+ </p>
+ Les questions peuvent exiger de se positionner sur une <b>échelle unidimensionnelle</b> (comme un taux d'accord)
+ <b>ou bipolaire</b> (entre innovant et dépassé par exemple).
+ <p>
+<p> Les <b>questions à choix multiples </b>peuvent aussi intégrer une enquête avec possibilité de une ou plusieurs réponses.
+Il faut dans ce cas avoir une bonne idée des options courantes de réponses (obtenues par exemple au travers d'interviews) et éventuellement
+prévoir une option "Autre, à préciser".
+</p>
+<p>La <b>veille dans la littérature</b> permet de trouver des questions sur 
+différents aspects avec une forme validée. J'épingle notamment 
+le fait que <a href="https://www.guillaumegronier.com/questionnaires-ux/" target="_blank">Guillaume Gronier nous promet de lister les références liées à la formulation 
+des questions de profil prochainement</a>.</p>
+<h4 id="netps"><a class="header" href="#netps"> Etre conscient des limites du net promoter score </a></h4>
+<p> Le <b>net promoter score</b> est un indicateur calculé sur base du taux d'accord avec la question<br/>
+<b> "Dans quelle mesure recommenderiez-vous ce service ?"</b>.<br/>
+Le taux d'accord est mesuré sur une échelle de 1 à 10 et le net promoter score est calculé comme suit:<br>
+(pourcentage de clients avec un taux d'accord de 9 ou 10) - (pourcentage de client avec un taux d'accord de 6 ou moins).<br>
+Le premier groupe est aussi désigné "les promoteurs" et le second "les détracteurs", alors que les personnes qui répondent 
+avec un taux d'accord  de 6 ou 7 représentent "les passifs" qui n'entrent pas en compte dans le calcul.</p>
+<p>
+L'intérêt de ce score réside dans sa simplicité et dans la possiblité de comparaison avec des acteurs concurrents.
+Mais sur le plan scientifique, les recherches ne montrent aucun lien entre l'évolution de cet indicateur et l'évolution du chiffre d'affaire, et les
+études statistiques montrent son <b>peu de fiabilité</b> puisqu'il souffre d'une grande variabilité et d'un biais de genre avéré. Ces biais se cumulent 
+parfois avec un biais de couleur, lorsque les items sont regoupés en 3 couleurs (vert, orange et rouge) qui influence l'interprétation de
+l'échelle initiale.
+</p>
+<h4 id="biais"><a class="header" href="#biais"> Eviter les biais de formulation et de passation</a></h4>
+<p> Lors de la formulation des questions, les hypothèses testées doivent être évaluées au travers de <b>questions formulées de manière neutre</b> qui
+laissent la même place à l'hypothèse et à sa négation. En particulier, les biais suivants seront évités:
+<ul>
+<li> biais de confirmation, de question suggestives ou culturel : liés à des questions qui ne sont pas neutres, mais porteuses d'une préconception
+explicite qui est suggérée ou à une préconception culturelle limitante qui est implicite;
+<li>tendence à l'acquiescement: il est plus facile de répondre "oui" que de répondre "non"; 
+      il vaut mieux alors présenter la question sous la forme d'un choix entre 2 options;</li>
+<li>effet de primauté et de récence : l'ordre des options a un influence sur les choix, les premières sont souvent privilégiées (effet de primauté)
+tout comme les dernières (effet de récence);</li>
+<li>effet de halo: bien souvent, les premières réponses influencent les réponses suivantes, en particulier lorsque plusieurs questions avec
+réponses à échelle se suivent; prévoir des items inversés dans ce cas;</li>
+<li>tendence à la triche: les participants cochent parfois des réponses aléatoires pour gagner du temps; pour pouvoir éliminer ces réponses, 
+prévoir des items inversés, et des questions d'attention ("Cochez l'option 5" ou "Répondez un mot donnéé);
+</ul>
+ </p>
+<p>L'organisation pratique de la passation mérite aussi une attention particulière par rapport aux risques liés aux biais suivants
+<ul>
+<li>biais de conception et de sélection : privilégier une enquête en ligne exclus par exemple les utilisateurs qui utilisent pas ou peu internet;</li>
+<li>biais procédural : difficile de collecter des données sensible en face à face ou au téléphone;</li>
+<li>biais de désirabilité sociale : les participants ont tendance à répondre aux questions de manière à se montrer à leur avantage; particulièrement
+      dans les enquêtes en face à face ou par téléphone.</li>
+</ul>
+</p>
+<h4 id="conseils"><a class="header" href="#conseils"> 8 conseils pour rédiger une enquête </a></h4>
+<p> La rédaction de cet article m'a inspiré un peu de veille sur les conseils pour rédiger un questionnaire d'enquête. Voici le résumé 
+des conseils pour rédiger une enquête réalisé avec Elicit.  </p>
+<div style="background-color:#DAFBDC;border-radius:10px;padding:5px">
+<ol>
+<li><b>Situer tout de suite l’objectif, le cadre et la promesse de valeur.</b> <br/> 
+L’introduction doit dire pourquoi l’enquête existe, qui la porte, et ce que l’on attend du répondant; elle doit le faire vite, sans préambule interminable [1,2]. Une bonne ouverture n’est pas un bloc juridique: elle sert à installer la confiance et à montrer que les réponses auront une utilité réelle [1,2].
+</li>
+<li> <b> Réduire la charge du répondant au strict nécessaire.</b><br/>
+ La longueur doit rester courte, la navigation simple, et la présentation lisible; sinon la qualité des réponses se dégrade avant la fin [2,3,7]. La littérature insiste explicitement sur la nécessité d’équilibrer le niveau d’information recherché et la fatigue induite chez le répondant [7].
+</li>
+<li><b> Écrire des questions qui ne demandent qu’une seule chose à la fois. </b><br/>
+ Les bons items sont courts, univoques, et exempts de double négation, de jargon, de formulation orientée, ou de plusieurs idées entremêlées [3,4]. Fowler résume la logique cognitive: il faut d’abord comprendre la question, puis récupérer l’information, la mettre en forme, et seulement ensuite répondre [4].
+</li>
+<li><b>Aller du général vers le spécifique. </b><br/>
+L’ordre des questions compte: les séquences logiques et structurées donnent de meilleures réponses, avec les questions générales avant les questions plus précises [1,2]. Les sujets plus sensibles ou plus intrusifs sont mieux placés vers la fin, quand le répondant a déjà compris le sujet et le rythme du questionnaire [1,2].
+</li>
+<li><b> Garder les questions de profilage utiles à l’analyse. </b><br/>
+Les variables de contexte ou de profil, comme l’âge, le genre, le poste, le lieu de travail ou l’ancienneté, peuvent être pertinentes, mais seulement si elles servent vraiment la segmentation ou l’interprétation [1]. En pratique, il vaut mieux les placer après les questions de fond, et ne garder que celles qui éclairent une décision analytique [1].
+</li>
+<li><b>Construire des modalités de réponse cohérentes.</b><br/>
+ Les options doivent être exhaustives, mutuellement exclusives, et adaptées au type de question [1]. Un item fermé doit couvrir toutes les réponses plausibles sans chevauchement; sinon les données deviennent difficiles à interpréter ou biaisées dès la saisie [1,3].
+</li>
+<li><b> Adapter la passation au format en ligne.</b><br/>
+ Les questionnaires électroniques ont un avantage net lorsqu’ils utilisent des sauts logiques et, si besoin, des éléments visuels pour fluidifier l’expérience [7]. En contrepartie, les consignes doivent être extrêmement claires, parce que le formulaire doit se comprendre sans médiation humaine [7].
+</li>
+<li><b>Prétester, relire, piloter, puis corriger. </b></br>
+Une enquête ne devrait pas être diffusée sans passage par la validation experte et le pilotage; les méthodes recommandées vont du focus group à l’entretien cognitif (le répondant pense à voix haute et décrit ce qu'il comprend des questons), en passant par la relecture experte, le behavior coding  (obsever l'attitude de l'utlisateur en répondant, ses hésitations) et le petit pilote (test à petite échelle) [9]. C’est ce travail qui révèle les ambiguïtés, les questions trop coûteuses, et les choix de formulation qui semblent évidents au concepteur mais pas au répondant [9].
+</li>
+</ol>
+<p>Références<br/>
+[1] McColl E, Jacoby A, Thomas L, Soutter J, Bamford C, Steen N, Thomas R, Harvey E, Garratt A, Bond J. Design and use of questionnaires: a review of best practice applicable to surveys of health service staff and patients. 2001.<br/>
+[2] Yaddanapudi S, Yaddanapudi L. How to design a questionnaire. 2019.<br/>
+[3] Bee DT, Murdoch-Eaton D. Questionnaire design: the good, the bad and the pitfalls. 2016.<br/>
+[4] Fowler FJ, Cosenza C. Writing Effective Questions. 2008.<br/>
+[5] Hansen MA, Tsheko GN. A Primer on Survey Research. 2021.<br/>
+[6] Mello M, Merchant R, Clark M. Surveying emergency medicine. 2013.<br/>
+[7] Peytcheva E, Yan T. A Practical Guide to Survey Questionnaire Design and Evaluation. 2025.<br/>
+[8] Salant P, Dillman DA. How to conduct your own survey. 1994.<br/>
+[9] Peytcheva E, Yan T. A Practical Guide to Survey Questionnaire Design and Evaluation. 2025.<br/>
+[10] Hansen MA, Tsheko GN. A Primer on Survey Research. 2021.<br/>
+[11] Draugalis JR, Coons SJ, Plaza CM. Best Practices for Survey Research Reports: A Synopsis for Authors and Reviewers. 2008.</p>
+</div>
+<h4 id="question"><a class="header" href="#question"> Recruter les participants </a></h4>
+<p> Comme pour toutes les méthodes UX et comme la sagesse des foules le justifie, il est essentiel de mobiliser un <b>pannel représentatif de 
+personnes</b> pour répondre à une enquête.  Il est toujours important de questionner l'intérêt de prendre en compte l'<b>avis des non utilisateurs 
+ou des personnes qui sont moins à l'aide avec les technologies</b>. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-idéation"><a class="header" href="#3-idéation">3. Idéation</a></h1>
 <h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-22"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-22"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> <div style="break-before: page; page-break-before: always;"></div><h1 id="compiler-les-données-sous-forme-dinsights-utilisateurs-avec-une-approche-inspirée-des-modèles-mentaux"><a class="header" href="#compiler-les-données-sous-forme-dinsights-utilisateurs-avec-une-approche-inspirée-des-modèles-mentaux">Compiler les données sous forme d'insights utilisateurs avec une approche inspirée des modèles mentaux</a></h1>
 <h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
@@ -2370,7 +2617,165 @@ par l’autocensure et la peur du jugement. Il propose alors une méthode collec
 <p>mixer les idées du support de cours et du bouquin (approches différentes)<br/>
 en classe nous avons joué la variante guerilla "Design consequenses" du design studio<br/>
 app très utile avec des techniques créatives : https://liberatingstructures.app/en/</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="analyser-les-besoins-avec-la-méthode-errc"><a class="header" href="#analyser-les-besoins-avec-la-méthode-errc">Analyser les besoins avec la méthode ERRC</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="envisager-lévolution-dun-système-avec-la-méthode-errc"><a class="header" href="#envisager-lévolution-dun-système-avec-la-méthode-errc">Envisager l'évolution d'un système avec la méthode ERRC</a></h1>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/ERRC-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>3. Idéation</dd>
+            <dt>Catégorie</dt>
+            <dd>Stratégie d'entreprise</dd>
+            <dt>Intérêt</dt>
+            <dd>Envisager l'évolution d'un outil ou d'un service de manière élargie</dd>
+            <dt>Complexité</dt>
+            <dd>Simple</dd>
+            <dt>Durée</dt>
+            <dd>Quelques jours</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=j-b7MHabLPg" target="_blank"> Blue Ocean Strategy (With Real World Examples)  (Business School 101)</a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#article">Blue Ocean Strategy: From Therory to Practice</a></li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part1">Distinction entre Océans Rouges et Océans Bleu</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part2">Le concept d'Innovation de Valeur</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part3">L'outil de diagnostic : le Canevas Stratégique</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part4">L'intérêt de l'analyse ERRC</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part5">Impact sur la croissance et la rentabilité</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part6"> L'intérêt de la méthode pour un client interne</a></li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part7">Sortir de l'Océan Rouge interne</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part8">Passer de l'Inside-Out à l'Outside-In</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part9">Simplification via l'analyse ERRC interne</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part10">Alignement du système pour l'efficacité interne</a> </li>
+<li> <a href="envisager-l-evolution-d-un-systeme-avec-la-methode-errc.html#part11">Pérennité et influence stratégique</a> </li>
+</ul>
+<h3 id="article"><a class="header" href="#article">Blue Ocean Strategy: From Therory to Practice</a></h3>
+<p>
+Cet article dresse un résumé de la référence suivante décrivant <b>la stratégie de l'océan bleu pour soutenir l'évolution d'un produit ou d'un service </b>:</p>
+<p style="margin:0 10px 0 20px;"><cite>Chan Kim,W. (2025). Blue Ocean Stragegy: From Theory to Practice. California Review Management, Vol 47, N°3, 105–121. <br>
+<a href="https://cmr.berkeley.edu/2005/05/47-3-blue-ocean-strategy-from-theory-to-practice/" target="_blank">https://cmr.berkeley.edu/2005/05/47-3-blue-ocean-strategy-from-theory-to-practice/</a></cite>
+</p><p>
+Ce résumé a été composé avec l'aide de Notebook LM.
+</p>
+<h4 id="part1"><a class="header" href="#part1">Distinction entre Océans Rouges et Océans Bleus</a></h4>
+    <p>Les <strong>océans rouges</strong> représentent les industries existantes où les frontières sont définies et les règles de concurrence connues. 
+    Dans cet espace, les entreprises tentent de surpasser leurs rivaux pour s'accaparer une part du marché existant, ce qui mène souvent à une baisse des profits 
+    et à une commoditisation des produits. À l'inverse, les <strong>océans bleus</strong> désignent des espaces de marché inconnus, créés par le développement 
+    d'une demande nouvelle, où la concurrence devient hors de propos car les règles du jeu restent à établir.</p>
+<h4 id="part2"><a class="header" href="#part2">Le concept d'Innovation de Valeur</a></h4>
+    <p>L'approche repose sur une <strong>vue reconstructionniste</strong> de la stratégie, s'opposant à la vision traditionnelle où les structures de marché sont 
+    considérées comme figées. Au lieu de choisir entre la différenciation et le bas coût, la stratégie océan bleu vise l'<strong>innovation de valeur</strong>. 
+    Il s'agit de briser le compromis valeur/coût en augmentant simultanément la valeur pour l'acheteur et en réduisant les coûts pour l'entreprise grâce à un alignement 
+    de tout le système d'activités.</p>
+<h4 id="part3"><a class="header" href="#part3">L'outil de diagnostic : le Canevas Stratégique</a></h4>
+    <p>L'outil central de diagnostic est le <strong>canevas stratégique</strong>, qui permet de visualiser le profil stratégique d'une industrie en identifiant les facteurs 
+    sur lesquels repose la concurrence. <p>
+    Le <strong>canevas stratégique</strong> est à la fois un outil de diagnostic et un cadre d'action essentiel pour élaborer une stratégie océan bleu. 
+    Pour le réaliser, on utilise un graphique où l'<strong>axe horizontal</strong> répertorie les facteurs clés sur lesquels l'industrie se livre concurrence et investit
+    (produit, service, livraison), tandis que l'<strong>axe vertical</strong> mesure le niveau d'offre que les acheteurs reçoivent pour chacun de ces facteurs. 
+    En reliant ces points, on obtient la <strong>courbe de valeur</strong>, une représentation graphique de la performance relative d'une entreprise par rapport à 
+    ses concurrents. La réalisation concrète commence par la cartographie de l'état actuel du marché pour comprendre où les concurrents investissent, 
+    ce qui révèle souvent une convergence des profils stratégiques dans un « océan rouge ». Pour transformer ce diagnostic en action, 
+    l'entreprise doit ensuite détourner son regard des concurrents pour se concentrer sur les <strong>alternatives et les non-clients</strong>, 
+    ce qui permet de redéfinir les éléments de valeur. 
+    </p>
+   <p>En analysant les <strong>courbes de valeur</strong>, une entreprise peut constater si elle est enlisée dans un océan rouge 
+    ou si elle parvient à s'en détacher. L'objectif est de créer une courbe de valeur qui possède trois caractéristiques essentielles : la <strong>focale</strong>, 
+    la <strong>divergence</strong> et un <strong>slogan percutant</strong>.</p>
+<h4 id="part4"><a class="header" href="#part4">L'intérêt de l'analyse ERRC</a></h4>
+<p>
+  L'<strong>analyse ERRC</strong> (Eliminer, Réduire, Renforcer, Créer), aussi appelée le "cadre des quatre actions", est l'outil fondamental pour briser le 
+  compromis entre la différenciation et le bas coût. Elle permet de reconstruire les éléments de valeur pour l'acheteur en agissant sur quatre leviers stratégiques :
+<ul>
+<li><strong>Eliminer </strong>:
+Cette action consiste à identifier les facteurs sur lesquels l'industrie se livre concurrence depuis longtemps et qui sont souvent considérés comme acquis.
+L'objectif est de supprimer les éléments qui n'apportent plus de valeur réelle ou qui peuvent même en soustraire aux yeux du client.
+Cela permet de réduire immédiatement la complexité et la structure de coûts. 
+</li>
+<li><strong>Réduire </strong>:
+On examine ici si certains produits ou services ont été sur-conçus uniquement pour surpasser la concurrence.
+L'entreprise identifie les facteurs où elle offre plus que nécessaire, augmentant ses coûts sans gain de valeur significatif pour l'acheteur.
+L'idée est de ramener ces niveaux d'offre bien en dessous de la norme de l'industrie pour simplifier l'activité.
+</li>
+<li><strong>Renforcer </strong>:
+Cette action pousse à découvrir et à éliminer les compromis que l'industrie force traditionnellement les clients à faire.
+Il s'agit d'augmenter le niveau de performance ou de qualité de certains facteurs clés bien au-delà des standards actuels du marché.
+L'objectif est d'apporter un gain de valeur immédiat et perceptible sur des éléments cruciaux pour l'expérience client.
+</li>
+<li><strong>Créer </strong>:
+Cette étape consiste à découvrir des sources de valeur entièrement nouvelles que l'industrie n'a jamais offertes auparavant.
+L'entreprise regarde au-delà des frontières habituelles pour attirer les <strong>non-clients</strong> en créant une demande nouvelle.
+C'est cette action qui permet de rendre la concurrence hors de propos en modifiant les bases mêmes de l'offre.
+</li>
+</ul>
+<p>
+Cette grille est un outil d'action qui force l'entreprise non seulement à se poser les quatre questions, mais surtout à <strong>agir simultanément</strong> 
+sur chacun des axes pour dessiner une nouvelle courbe de valeur. 
+</p>
+<p>
+  En remplissant cette grille, l'entreprise obtient deux bénéfices immédiats : les actions d'<strong>exclusion</strong> et de <strong>réduction</strong> font chuter 
+  sa structure de coûts, tandis que les actions de <strong>renforcement</strong> et de <strong>création</strong> augmentent la valeur pour l'acheteur. 
+  C'est cet alignement global qui permet d'atteindre l'<strong>innovation de valeur</strong> et de sortir durablement de l'océan rouge.
+</p>
+<h4 id="part5"><a class="header" href="#part5">Impact sur la croissance et la rentabilité</a></h4>
+    <p>L'intérêt majeur pour l'entreprise est la <strong>croissance rentable</strong>. Les recherches des auteurs montrent que si les lancements dans les océans rouges 
+    représentent 86 % des initiatives, ils ne génèrent que 39 % des profits. En revanche, les 14 % d'investissements consacrés aux océans bleus génèrent <strong>61 % 
+    des profits totaux</strong>. En se concentrant sur les <strong>non-clients</strong> et les alternatives plutôt que sur les concurrents directs, l'entreprise ouvre un 
+    espace de marché vierge qui garantit une performance supérieure.</p>
+<h3 id="part6"><a class="header" href="#part6">L'intérêt de la méthode pour un client interne</a></h3>
+<h4 id="part7"><a class="header" href="#part7">Sortir de l'Océan Rouge interne</a></h4>
+    <p>Travailler pour un client interne revient souvent à naviguer dans un <strong>océan rouge interne</strong> où le département est perçu comme un simple 
+    centre de coûts comparé à des standards rigides. La méthode permet de redéfinir cette relation en cessant de se comparer aux processus habituels pour créer une valeur 
+    unique. L'enjeu est de transformer une fonction support en un partenaire stratégique dont l'apport est devenu "hors concurrence" vis-à-vis d'une externalisation.</p>
+<h4 id="part8"><a class="header" href="#part8">Passer de l'Inside-Out à l'Outside-In</a></h4>
+    <p>La source souligne que le langage utilisé (ex: jargon technique vs termes compréhensibles par l'acheteur) révèle si une vision est <strong>"inside-out"</strong> 
+    (opérationnelle) ou <strong>"outside-in"</strong> (orientée demande). Pour un client interne, cela signifie traduire les compétences techniques en 
+    bénéfices clairs pour les autres départements. En adoptant cette perspective, on cesse de livrer des services dont le client n'a pas besoin pour se concentrer 
+    sur son utilité réelle.</p>
+<h4 id="part9"><a class="header" href="#part9">Simplification via l'analyse ERRC interne</a></h4>
+    <p>L'analyse ERRC devient un outil de <strong>simplification administrative</strong>. Plus précisément, l'analyse ERRC peut se décliner comme suit dans le 
+    contexte d'une évolution d'un service interne:
+<ul><li>
+    <strong>Éliminer :</strong> 
+    Le service doit identifier les facteurs que l'organisation considère comme acquis mais qui n'apportent plus de valeur réelle aux autres départements. 
+    En interne, cela signifie souvent supprimer le jargon opérationnel et technique complexe. 
+    Il s'agit également d'éliminer les processus ou les contrôles hérités du passé qui ralentissent l'activité sans bénéfice concret pour l'utilisateur final.
+  </li>
+  <li>
+    <strong>Réduire :</strong> 
+    Cette action consiste à identifier où le service interne "sur-livre" ou propose des solutions trop sophistiquées par rapport aux besoins réels. 
+    Par exemple, on peut réduire la complexité des rapports ou limiter la gamme de services proposés pour éviter de paralyser le client interne face à trop de choix. 
+    Réduire ces investissements inutiles permet de faire chuter la structure de coûts interne (temps, budget, ressources).
+  </li>
+  <li>
+    <strong>Renforcer :</strong> 
+    Le département doit découvrir et éliminer les compromis que les employés ou les autres managers sont forcés de faire. 
+    Cela peut signifier relever massivement le niveau de <strong>réactivité</strong>, la clarté des réponses ou la pertinence stratégique bien 
+    au-delà des standards habituels de l'entreprise. L'objectif est d'apporter un gain de valeur immédiat sur les points de friction les plus douloureux
+    pour le client interne.
+  </li>
+  <li>
+    <strong>Créer :</strong> 
+    L'innovation consiste ici à proposer des sources de valeur totalement inédites que le client interne n'avait jamais envisagées. 
+    Cela peut passer par la création d'outils d'auto-service intuitifs, de conseils proactifs pour aider les autres départements à atteindre leurs propres objectifs, 
+    ou d'une expérience de service simplifiée et "sans intimidation" qui change la perception de la fonction support.
+  </li>
+</ul>
+<h4 id="part10"><a class="header" href="#part10">Alignement du système pour l'efficacité interne</a></h4>
+    <p>L'innovation de valeur appliquée en interne permet d'aligner l'<strong>utilité, le "prix" (coût interne) et les activités</strong>. 
+    En réduisant la complexité des processus, le département interne peut offrir une meilleure expérience au client tout en diminuant sa charge de travail. 
+    Cet alignement global rend la solution interne bien plus attractive et durable, évitant les investissements inutiles dans des facteurs qui n'ajoutent qu'une 
+    valeur incrémentale.</p>
+<h4 id="part11"><a class="header" href="#part11">Pérennité et influence stratégique</a></h4>
+    <p>Enfin, l'approche permet de définir une mission interne dotée de <strong>focale et de divergence</strong>. 
+    Une stratégie interne qui se contente de copier n'a aucune raison de se démarquer et reste vulnérable aux coupes budgétaires. 
+    En créant cet "océan bleu interne" avec un <strong>slogan clair</strong> et une offre différenciée, le département garantit son influence 
+    et sa pérennité au sein de l'organisation en devenant indispensable à la réussite globale de l'entreprise.</p>
 <h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-26"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa-26"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> <div style="break-before: page; page-break-before: always;"></div><h1 id="prioriser-les-besoins-avec-la-méthode-moscow"><a class="header" href="#prioriser-les-besoins-avec-la-méthode-moscow">Prioriser les besoins avec la méthode MoSCoW</a></h1>
 <h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
 <div class="zabcontainer">

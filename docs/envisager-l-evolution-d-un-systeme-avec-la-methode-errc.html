@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Envisager l&#x27;évolution d&#x27;un système avec la méthode ERRC - UX Design by zabellemotte</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UX Design by zabellemotte</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="envisager-lévolution-dun-système-avec-la-méthode-errc"><a class="header" href="#envisager-lévolution-dun-système-avec-la-méthode-errc">Envisager l'évolution d'un système avec la méthode ERRC</a></h1>
+<h4 id="survol"><a class="header" href="#survol">En un coup d'oeil </a></h4>
+<div class="zabcontainer">
+    <div class="zableft">
+      <img src="images/ERRC-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+    </div>
+    <div class="zabright">
+        <dl class="zab-method-dl">
+            <dt>Etape UX</dt>
+            <dd>3. Idéation</dd>
+            <dt>Catégorie</dt>
+            <dd>Stratégie d'entreprise</dd>
+            <dt>Intérêt</dt>
+            <dd>Envisager l'évolution d'un outil ou d'un service de manière élargie</dd>
+            <dt>Complexité</dt>
+            <dd>Simple</dd>
+            <dt>Durée</dt>
+            <dd>Quelques jours</dd>
+            <dt>En vidéo</dt>
+            <dd><a href="https://www.youtube.com/watch?v=j-b7MHabLPg" target="_blank"> Blue Ocean Strategy (With Real World Examples)  (Business School 101)</a></dd>
+        </dl>
+    </div>
+  </div>
+<ul>
+<li> <a href="#article">Blue Ocean Strategy: From Therory to Practice</a></li>
+<li> <a href="#part1">Distinction entre Océans Rouges et Océans Bleu</a> </li>
+<li> <a href="#part2">Le concept d'Innovation de Valeur</a> </li>
+<li> <a href="#part3">L'outil de diagnostic : le Canevas Stratégique</a> </li>
+<li> <a href="#part4">L'intérêt de l'analyse ERRC</a> </li>
+<li> <a href="#part5">Impact sur la croissance et la rentabilité</a> </li>
+<li> <a href="#part6"> L'intérêt de la méthode pour un client interne</a></li>
+<li> <a href="#part7">Sortir de l'Océan Rouge interne</a> </li>
+<li> <a href="#part8">Passer de l'Inside-Out à l'Outside-In</a> </li>
+<li> <a href="#part9">Simplification via l'analyse ERRC interne</a> </li>
+<li> <a href="#part10">Alignement du système pour l'efficacité interne</a> </li>
+<li> <a href="#part11">Pérennité et influence stratégique</a> </li>
+</ul>
+<h3 id="article"><a class="header" href="#article">Blue Ocean Strategy: From Therory to Practice</a></h3>
+<p>
+Cet article dresse un résumé de la référence suivante décrivant <b>la stratégie de l'océan bleu pour soutenir l'évolution d'un produit ou d'un service </b>:</p>
+<p style="margin:0 10px 0 20px;"><cite>Chan Kim,W. (2025). Blue Ocean Stragegy: From Theory to Practice. California Review Management, Vol 47, N°3, 105–121. <br>
+<a href="https://cmr.berkeley.edu/2005/05/47-3-blue-ocean-strategy-from-theory-to-practice/" target="_blank">https://cmr.berkeley.edu/2005/05/47-3-blue-ocean-strategy-from-theory-to-practice/</a></cite>
+</p><p>
+Ce résumé a été composé avec l'aide de Notebook LM.
+</p>
+<h4 id="part1"><a class="header" href="#part1">Distinction entre Océans Rouges et Océans Bleus</a></h4>
+    <p>Les <strong>océans rouges</strong> représentent les industries existantes où les frontières sont définies et les règles de concurrence connues. 
+    Dans cet espace, les entreprises tentent de surpasser leurs rivaux pour s'accaparer une part du marché existant, ce qui mène souvent à une baisse des profits 
+    et à une commoditisation des produits. À l'inverse, les <strong>océans bleus</strong> désignent des espaces de marché inconnus, créés par le développement 
+    d'une demande nouvelle, où la concurrence devient hors de propos car les règles du jeu restent à établir.</p>
+<h4 id="part2"><a class="header" href="#part2">Le concept d'Innovation de Valeur</a></h4>
+    <p>L'approche repose sur une <strong>vue reconstructionniste</strong> de la stratégie, s'opposant à la vision traditionnelle où les structures de marché sont 
+    considérées comme figées. Au lieu de choisir entre la différenciation et le bas coût, la stratégie océan bleu vise l'<strong>innovation de valeur</strong>. 
+    Il s'agit de briser le compromis valeur/coût en augmentant simultanément la valeur pour l'acheteur et en réduisant les coûts pour l'entreprise grâce à un alignement 
+    de tout le système d'activités.</p>
+<h4 id="part3"><a class="header" href="#part3">L'outil de diagnostic : le Canevas Stratégique</a></h4>
+    <p>L'outil central de diagnostic est le <strong>canevas stratégique</strong>, qui permet de visualiser le profil stratégique d'une industrie en identifiant les facteurs 
+    sur lesquels repose la concurrence. <p>
+    Le <strong>canevas stratégique</strong> est à la fois un outil de diagnostic et un cadre d'action essentiel pour élaborer une stratégie océan bleu. 
+    Pour le réaliser, on utilise un graphique où l'<strong>axe horizontal</strong> répertorie les facteurs clés sur lesquels l'industrie se livre concurrence et investit
+    (produit, service, livraison), tandis que l'<strong>axe vertical</strong> mesure le niveau d'offre que les acheteurs reçoivent pour chacun de ces facteurs. 
+    En reliant ces points, on obtient la <strong>courbe de valeur</strong>, une représentation graphique de la performance relative d'une entreprise par rapport à 
+    ses concurrents. La réalisation concrète commence par la cartographie de l'état actuel du marché pour comprendre où les concurrents investissent, 
+    ce qui révèle souvent une convergence des profils stratégiques dans un « océan rouge ». Pour transformer ce diagnostic en action, 
+    l'entreprise doit ensuite détourner son regard des concurrents pour se concentrer sur les <strong>alternatives et les non-clients</strong>, 
+    ce qui permet de redéfinir les éléments de valeur. 
+    </p>
+   <p>En analysant les <strong>courbes de valeur</strong>, une entreprise peut constater si elle est enlisée dans un océan rouge 
+    ou si elle parvient à s'en détacher. L'objectif est de créer une courbe de valeur qui possède trois caractéristiques essentielles : la <strong>focale</strong>, 
+    la <strong>divergence</strong> et un <strong>slogan percutant</strong>.</p>
+<h4 id="part4"><a class="header" href="#part4">L'intérêt de l'analyse ERRC</a></h4>
+<p>
+  L'<strong>analyse ERRC</strong> (Eliminer, Réduire, Renforcer, Créer), aussi appelée le "cadre des quatre actions", est l'outil fondamental pour briser le 
+  compromis entre la différenciation et le bas coût. Elle permet de reconstruire les éléments de valeur pour l'acheteur en agissant sur quatre leviers stratégiques :
+<ul>
+<li><strong>Eliminer </strong>:
+Cette action consiste à identifier les facteurs sur lesquels l'industrie se livre concurrence depuis longtemps et qui sont souvent considérés comme acquis.
+L'objectif est de supprimer les éléments qui n'apportent plus de valeur réelle ou qui peuvent même en soustraire aux yeux du client.
+Cela permet de réduire immédiatement la complexité et la structure de coûts. 
+</li>
+<li><strong>Réduire </strong>:
+On examine ici si certains produits ou services ont été sur-conçus uniquement pour surpasser la concurrence.
+L'entreprise identifie les facteurs où elle offre plus que nécessaire, augmentant ses coûts sans gain de valeur significatif pour l'acheteur.
+L'idée est de ramener ces niveaux d'offre bien en dessous de la norme de l'industrie pour simplifier l'activité.
+</li>
+<li><strong>Renforcer </strong>:
+Cette action pousse à découvrir et à éliminer les compromis que l'industrie force traditionnellement les clients à faire.
+Il s'agit d'augmenter le niveau de performance ou de qualité de certains facteurs clés bien au-delà des standards actuels du marché.
+L'objectif est d'apporter un gain de valeur immédiat et perceptible sur des éléments cruciaux pour l'expérience client.
+</li>
+<li><strong>Créer </strong>:
+Cette étape consiste à découvrir des sources de valeur entièrement nouvelles que l'industrie n'a jamais offertes auparavant.
+L'entreprise regarde au-delà des frontières habituelles pour attirer les <strong>non-clients</strong> en créant une demande nouvelle.
+C'est cette action qui permet de rendre la concurrence hors de propos en modifiant les bases mêmes de l'offre.
+</li>
+</ul>
+<p>
+Cette grille est un outil d'action qui force l'entreprise non seulement à se poser les quatre questions, mais surtout à <strong>agir simultanément</strong> 
+sur chacun des axes pour dessiner une nouvelle courbe de valeur. 
+</p>
+<p>
+  En remplissant cette grille, l'entreprise obtient deux bénéfices immédiats : les actions d'<strong>exclusion</strong> et de <strong>réduction</strong> font chuter 
+  sa structure de coûts, tandis que les actions de <strong>renforcement</strong> et de <strong>création</strong> augmentent la valeur pour l'acheteur. 
+  C'est cet alignement global qui permet d'atteindre l'<strong>innovation de valeur</strong> et de sortir durablement de l'océan rouge.
+</p>
+<h4 id="part5"><a class="header" href="#part5">Impact sur la croissance et la rentabilité</a></h4>
+    <p>L'intérêt majeur pour l'entreprise est la <strong>croissance rentable</strong>. Les recherches des auteurs montrent que si les lancements dans les océans rouges 
+    représentent 86 % des initiatives, ils ne génèrent que 39 % des profits. En revanche, les 14 % d'investissements consacrés aux océans bleus génèrent <strong>61 % 
+    des profits totaux</strong>. En se concentrant sur les <strong>non-clients</strong> et les alternatives plutôt que sur les concurrents directs, l'entreprise ouvre un 
+    espace de marché vierge qui garantit une performance supérieure.</p>
+<h3 id="part6"><a class="header" href="#part6">L'intérêt de la méthode pour un client interne</a></h3>
+<h4 id="part7"><a class="header" href="#part7">Sortir de l'Océan Rouge interne</a></h4>
+    <p>Travailler pour un client interne revient souvent à naviguer dans un <strong>océan rouge interne</strong> où le département est perçu comme un simple 
+    centre de coûts comparé à des standards rigides. La méthode permet de redéfinir cette relation en cessant de se comparer aux processus habituels pour créer une valeur 
+    unique. L'enjeu est de transformer une fonction support en un partenaire stratégique dont l'apport est devenu "hors concurrence" vis-à-vis d'une externalisation.</p>
+<h4 id="part8"><a class="header" href="#part8">Passer de l'Inside-Out à l'Outside-In</a></h4>
+    <p>La source souligne que le langage utilisé (ex: jargon technique vs termes compréhensibles par l'acheteur) révèle si une vision est <strong>"inside-out"</strong> 
+    (opérationnelle) ou <strong>"outside-in"</strong> (orientée demande). Pour un client interne, cela signifie traduire les compétences techniques en 
+    bénéfices clairs pour les autres départements. En adoptant cette perspective, on cesse de livrer des services dont le client n'a pas besoin pour se concentrer 
+    sur son utilité réelle.</p>
+<h4 id="part9"><a class="header" href="#part9">Simplification via l'analyse ERRC interne</a></h4>
+    <p>L'analyse ERRC devient un outil de <strong>simplification administrative</strong>. Plus précisément, l'analyse ERRC peut se décliner comme suit dans le 
+    contexte d'une évolution d'un service interne:
+<ul><li>
+    <strong>Éliminer :</strong> 
+    Le service doit identifier les facteurs que l'organisation considère comme acquis mais qui n'apportent plus de valeur réelle aux autres départements. 
+    En interne, cela signifie souvent supprimer le jargon opérationnel et technique complexe. 
+    Il s'agit également d'éliminer les processus ou les contrôles hérités du passé qui ralentissent l'activité sans bénéfice concret pour l'utilisateur final.
+  </li>
+  <li>
+    <strong>Réduire :</strong> 
+    Cette action consiste à identifier où le service interne "sur-livre" ou propose des solutions trop sophistiquées par rapport aux besoins réels. 
+    Par exemple, on peut réduire la complexité des rapports ou limiter la gamme de services proposés pour éviter de paralyser le client interne face à trop de choix. 
+    Réduire ces investissements inutiles permet de faire chuter la structure de coûts interne (temps, budget, ressources).
+  </li>
+  <li>
+    <strong>Renforcer :</strong> 
+    Le département doit découvrir et éliminer les compromis que les employés ou les autres managers sont forcés de faire. 
+    Cela peut signifier relever massivement le niveau de <strong>réactivité</strong>, la clarté des réponses ou la pertinence stratégique bien 
+    au-delà des standards habituels de l'entreprise. L'objectif est d'apporter un gain de valeur immédiat sur les points de friction les plus douloureux
+    pour le client interne.
+  </li>
+  <li>
+    <strong>Créer :</strong> 
+    L'innovation consiste ici à proposer des sources de valeur totalement inédites que le client interne n'avait jamais envisagées. 
+    Cela peut passer par la création d'outils d'auto-service intuitifs, de conseils proactifs pour aider les autres départements à atteindre leurs propres objectifs, 
+    ou d'une expérience de service simplifiée et "sans intimidation" qui change la perception de la fonction support.
+  </li>
+</ul>
+<h4 id="part10"><a class="header" href="#part10">Alignement du système pour l'efficacité interne</a></h4>
+    <p>L'innovation de valeur appliquée en interne permet d'aligner l'<strong>utilité, le "prix" (coût interne) et les activités</strong>. 
+    En réduisant la complexité des processus, le département interne peut offrir une meilleure expérience au client tout en diminuant sa charge de travail. 
+    Cet alignement global rend la solution interne bien plus attractive et durable, évitant les investissements inutiles dans des facteurs qui n'ajoutent qu'une 
+    valeur incrémentale.</p>
+<h4 id="part11"><a class="header" href="#part11">Pérennité et influence stratégique</a></h4>
+    <p>Enfin, l'approche permet de définir une mission interne dotée de <strong>focale et de divergence</strong>. 
+    Une stratégie interne qui se contente de copier n'a aucune raison de se démarquer et reste vulnérable aux coupes budgétaires. 
+    En créant cet "océan bleu interne" avec un <strong>slogan clair</strong> et une offre différenciée, le département garantit son influence 
+    et sa pérennité au sein de l'organisation en devenant indispensable à la réussite globale de l'entreprise.</p>
+<h6 id="cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"><a class="header" href="#cet-article-et-ses-illustrations-sont-partagées-sous-licence-creative-commons-by-sa"> Cet article et ses illustrations sont partagées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">Creative Commons-by-sa</a>. </a></h6> 
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="generer-des-idees-avec-le-design-studio.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="prioriser-les-besoins-avec-la-methode-moscow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="generer-des-idees-avec-le-design-studio.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="prioriser-les-besoins-avec-la-methode-moscow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
