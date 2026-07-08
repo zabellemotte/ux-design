@@ -1,11 +1,9 @@
 # Réaliser une enquête pour consolider ses hypothèses
 
-
-
 <h4 id="survol">En un coup d'oeil </h4>
 <div class="zabcontainer">
     <div class="zableft">
-      <img src="images/prochainement.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
+      <img src="images/enquete-ux-cc-by-sa.png" width="400px" style="max-width:100%; cursor:pointer;" class="photo-style2" onclick="this.requestFullscreen()"/>
     </div>
     <div class="zabright">
         <dl class="zab-method-dl">
@@ -50,7 +48,7 @@ du service ciblé, en veillant à penser aux non utilisateurs si c'est pertinent
 <p> La <b>sagesse des foules</b> désigne un important résultat de recherche qui a montré qu'un grand nombre de personnes, 
 lorsqu'elles donnent leur avis de manière indépendante, peuvent collectivement produire une réponse plus juste qu'un expert isolé.</p>
 
-<p> L'idée originale est d'abord liés à une expérience menée par Francis Galton Galton, l'un des pionniers de la statistique moderne. 
+<p> L'idée originale est d'abord liée à une expérience menée par Francis Galton, l'un des pionniers de la statistique moderne. 
 En 1906, il observe lors d'une foire qu'en faisant la moyenne des estimations de plusieurs centaines de personnes sur le poids d'un bœuf,
 on obtient un résultat presque exact. <p>
 
@@ -80,7 +78,7 @@ et les émotions d'un utilisateur.  </p>
 <li><b> papier</b>: plus lourd au niveau logistique mais permet d'impliquer des personnes moins à l'aise avec les technologies;</li>
 <li><b> électronique</b>: simple à analyser, diffusé facilement à un grand nombre de participants, mais nécessite un <b>pré-test rigoureux </b>
 car les répondants ne peuvent pas demander d'informations complémentaires, et ne permet pas de toucher les personnes moins à l'aise avec
-la numérique; leur version guérilla se décline sous une forme très courte qui peut récolter plus de répondants soit via envoi par mail , soit via 
+le numérique; leur version guérilla se décline sous une forme très courte qui peut récolter plus de répondants soit via envoi par mail , soit via 
 une intégration à une site web; il faut dans ce cas éviter le caractère viral de l'enquête pour limiter le risque de réponse au hasard;
 </li>
 <li><b> téléphone</b>: permet de cibler une population spécifique et d'expliquer les questions si nécessaire mais prends du temps et convient
@@ -101,7 +99,7 @@ et garantie d'anonymat (RGPD);  indication du nombre de questions et de la duré
 sensibles sous forme indirecte après quelques questions plus générales;</li>
 <li><b>Profil</b>:  ces questions  ciblent les éléments socio-démographiques 
 (âge, sexe, niveau d'étude, profession, ...); il peut être pertinent de s'inspirer des données statistiques Stabel pour avoir une idée préalable 
-profils sur certaines questions spécifiques;</li>
+des profils sur certaines questions spécifiques;</li>
 <li><b>Remerciement et coordonnées de contact</b></li>
 </ul>
 </p>
@@ -138,7 +136,7 @@ des questions de profil prochainement</a>.</p>
 
 <h4 id="netps"> Etre conscient des limites du net promoter score </h4>
 <p> Le <b>net promoter score</b> est un indicateur calculé sur base du taux d'accord avec la question<br/>
-<b> "Dans quelle mesure recommenderiez-vous ce service ?"</b>.<br/>
+<b> "Dans quelle mesure recommanderiez-vous ce service ?"</b>.<br/>
 Le taux d'accord est mesuré sur une échelle de 1 à 10 et le net promoter score est calculé comme suit:<br>
 (pourcentage de clients avec un taux d'accord de 9 ou 10) - (pourcentage de client avec un taux d'accord de 6 ou moins).<br>
 Le premier groupe est aussi désigné "les promoteurs" et le second "les détracteurs", alors que les personnes qui répondent 
@@ -157,18 +155,18 @@ laissent la même place à l'hypothèse et à sa négation. En particulier, les 
 <ul>
 <li> biais de confirmation, de question suggestives ou culturel : liés à des questions qui ne sont pas neutres, mais porteuses d'une préconception
 explicite qui est suggérée ou à une préconception culturelle limitante qui est implicite;
-<li>tendence à l'acquiescement: il est plus facile de répondre "oui" que de répondre "non"; 
+<li>tendance à l'acquiescement: il est plus facile de répondre "oui" que de répondre "non"; 
       il vaut mieux alors présenter la question sous la forme d'un choix entre 2 options;</li>
 <li>effet de primauté et de récence : l'ordre des options a un influence sur les choix, les premières sont souvent privilégiées (effet de primauté)
 tout comme les dernières (effet de récence);</li>
 <li>effet de halo: bien souvent, les premières réponses influencent les réponses suivantes, en particulier lorsque plusieurs questions avec
 réponses à échelle se suivent; prévoir des items inversés dans ce cas;</li>
-<li>tendence à la triche: les participants cochent parfois des réponses aléatoires pour gagner du temps; pour pouvoir éliminer ces réponses, 
+<li>tendance à la triche: les participants cochent parfois des réponses aléatoires pour gagner du temps; pour pouvoir éliminer ces réponses, 
 prévoir des items inversés, et des questions d'attention ("Cochez l'option 5" ou "Répondez un mot donnéé);
 </ul>
  </p>
 
-<p>L'organisation pratique de la passation mérite aussi une attention particulière par rapport aux risques liés aux biais suivants
+<p>L'organisation pratique de la passation mérite aussi une attention particulière par rapport aux risques liés aux biais suivants :
 <ul>
 <li>biais de conception et de sélection : privilégier une enquête en ligne exclus par exemple les utilisateurs qui utilisent pas ou peu internet;</li>
 <li>biais procédural : difficile de collecter des données sensible en face à face ou au téléphone;</li>
@@ -226,4 +224,4 @@ Références<br/>
 <h4 id="question"> Recruter les participants </h4>
 <p> Comme pour toutes les méthodes UX et comme la sagesse des foules le justifie, il est essentiel de mobiliser un <b>pannel représentatif de 
 personnes</b> pour répondre à une enquête.  Il est toujours important de questionner l'intérêt de prendre en compte l'<b>avis des non utilisateurs 
-ou des personnes qui sont moins à l'aide avec les technologies</b>. </p>
+ou des personnes qui sont moins à l'aise avec les technologies</b>. </p>
