@@ -80,7 +80,7 @@ Puis rédige le tableau.
 <p>
 Quand tout est OK (uniquement !), demandez : “Donne moi des tableaux avec uniquement les atomes. Autant de tableau que d'interviewés”.
 </p>
-<h4 id="carte"> Relier les atomes pour composer une carte conceptuelle qui résume les besoins (sans IA!)</h4
+<h4 id="carte"> Relier les atomes pour composer une carte conceptuelle qui résume les besoins (sans IA!)</h4>
 <p> La phase de recoupement ne peut pas (encore) être supportée par les IA génératives car celles-ci ont tendances à trop simplifier les idées, alors
 qu'on souhaite précisément rester fidèle à l'expression des utilisateurs. Une approche pas trop lourde pour réussir le regroupement des idées 
 est de suivre les étapes suivantes :
